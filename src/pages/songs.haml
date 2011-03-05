@@ -1,0 +1,45 @@
+%h2 Songs
+
+%h3 List all
+
+%p Lists all the songs that belong to this user
+
+%h4 GET /songs.xml
+
+%h5 Response
+
+%pre
+  %code
+    :escaped
+      <songs type="array">
+        <song>
+          <artist>Five Iron Frenzy</artist>
+          <id type="integer">435</id>
+          <song-file-name>06_Shut_Up.mp3</song-file-name>
+          <title>Shut Up</title>
+          <user-id type="integer">51</user-id>
+        </song>
+      </songs>
+
+%h3 List free
+
+%p Lists all royalty-free songs available to the user
+
+%h4 GET /songs/free.xml
+
+%h5 Response
+
+%pre
+  %code
+    :escaped
+      <songs type="array">
+        <song>
+          <artist>Molly Jenson</artist>
+          <id type="integer">9</id>
+          <song-file-name>GiveItTime.mp3</song-file-name>
+          <title>Give It Time</title>
+          <user-id type="integer">0</user-id>
+        </song>
+      </songs>
+      
+- # Create available but undocumented
