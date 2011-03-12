@@ -1,5 +1,8 @@
 %h2 Introduction
-%p The AlbumExposure API is implemented as vanilla XML over HTTPS.  Send the Content-Type: application/xml header to identify XML requests.    
+%p The AlbumExposure API is implemented as vanilla XML over HTTPS.  Send the Content-Type: application/xml header to identify XML along with the xml extension on the end of the request.
+
+%p 
+  %b NOTE: We are adding JSON support to the API, contact us for further information.
     
 %h3 Making requests
 
@@ -16,9 +19,9 @@
 
 %h3 Responses
 
-%p If a request succeeds, it will return a status code in the 200 range and often, an XML-formatted response. Note that, in general, if a request causes a new record to be created (like a new album, or spread, etc.), the response will use the "201 Created" status. Any other successful operation (like a successful query, delete, or update) will return a 200 status code.
+%p If a request succeeds, it will return a status code in the 200 range and often, an XML or JSON formatted response. Note that, in general, if a request causes a new record to be created (like a new album, or spread, etc.), the response will use the "201 Created" status. Any other successful operation (like a successful query, delete, or update) will return a 200 status code.
 
-%p If a request fails, a non-200 status code will be returned, possibly with error information in XML format as the response's content. For instance, if a requested record could not be found, the HTTP response might look something like:
+%p If a request fails, a non-200 status code will be returned, possibly with error information in XML or JSON format as the response's content. For instance, if a requested record could not be found, the HTTP response might look something like:
 
 %pre
   %code

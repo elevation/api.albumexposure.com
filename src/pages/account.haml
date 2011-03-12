@@ -1,0 +1,72 @@
+%h2 Account
+
+%h3 SHOW
+
+%h4 GET /account.xml
+
+%p Returns information about the current account. 
+
+%h5 Response
+
+%pre
+  %code
+    :preserve
+      &lt;user&gt;
+        &lt;id type=&quot;integer&quot;&gt;51&lt;/id&gt;
+        &lt;first-name&gt;Jared&lt;/first-name&gt;
+        &lt;last-name&gt;Moody&lt;/last-name&gt;
+        &lt;email&gt;jared@albumexposure.com&lt;/email&gt;
+        &lt;second-email&gt;&lt;/second-email&gt;
+        &lt;third-email&gt;&lt;/third-email&gt;
+        &lt;company-name&gt;AlbumExposure&lt;/company-name&gt;
+        &lt;address&gt;151 Kalmus Drive STE B-100&lt;/address&gt;
+        &lt;city&gt;Costa Mesa&lt;/city&gt;
+        &lt;state&gt;CA&lt;/state&gt;
+        &lt;zip&gt;92626&lt;/zip&gt;
+        &lt;country&gt;United States&lt;/country&gt;
+        &lt;color&gt;#FFFFFF&lt;/color&gt;
+        &lt;logo-file-name nil=&quot;true&quot;&gt;&lt;/logo-file-name&gt;
+        &lt;logo-position&gt;left&lt;/logo-position&gt;
+        &lt;status&gt;current&lt;/status&gt;
+        &lt;twitter-name&gt;@albumexposure&lt;/twitter-name&gt;
+        &lt;version&gt;std&lt;/version&gt;
+        &lt;created-at type=&quot;datetime&quot;&gt;2007-09-10T03:02:57-07:00&lt;/created-at&gt;
+      &lt;/user&gt;
+      
+      
+%h3 Create Account
+
+%h4 POST /account.xml
+
+%p Create an AlbumExposure account. Required fields are:
+
+%ul
+  %li First name
+  %li Last name
+  %li Email
+  %li Login
+  %li Password
+  %li Password confirmation
+  %li Acceptance of AE privacy policy and terms of service
+
+
+%h5 XML request
+%pre
+  %code
+    :preserve
+      &lt;user&gt;
+        &lt;first-name&gt;Jared&lt;/first-name&gt;
+        &lt;last-name&gt;Moody&lt;/last-name&gt;
+        &lt;company-name&gt;AlbumExposure&lt;/company-name&gt;
+        &lt;email&gt;support@albumexposure.com&lt;/email&gt;
+        &lt;twitter-name&gt;@albumexposure&lt;/twitter-name&gt;
+        &lt;password&gt;mypassword&lt;/password&gt;
+        &lt;password-confirmation&gt;mypassword&lt;/password-confirmation&gt;
+        &lt;terms&gt;true&lt;/term&gt;
+        &lt;newsletter&gt;true&lt;/newsletter&gt;
+      &lt;/user&gt;
+      
+%h5 Response
+%pre
+  %code
+    Status: 201 Created

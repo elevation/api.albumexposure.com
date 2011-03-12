@@ -32,6 +32,12 @@
 
 %h5 Request
 
+%p Temporarily we recommend that you submit a spread create request as a POST of name-value pairs:
+
+%pre
+  %code
+    spread[image] = \#{Filedata}
+
 %h5 Response
 
 %pre
@@ -39,7 +45,7 @@
   
 %h3 Destroy spread
 
-%h4 DELETE /album/\#{album.permalink}/spreads/\#{spread.id}
+%h4 DELETE /album/\#{album.permalink}/spreads/\#{spread.id}.xml
 
 %h5 Request
 
