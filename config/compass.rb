@@ -1,3 +1,3 @@
-require "staticmatic/compass"
+#require "staticmatic/compass"
 
-project_type = :staticmatic
+#project_type = :staticmatic

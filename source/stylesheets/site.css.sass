@@ -29,7 +29,7 @@ pre
   background-color: #111111
   color: #33ff00
   padding: 10px
-  margin-bottom: 1em
+  overflow: hidden
 
 p
   margin:
@@ -53,7 +53,8 @@ h3
   font-weight: bold
   color: #616263
 
-  
+b
+  font-weight: bold
 
   
 #sidebar
@@ -71,17 +72,24 @@ h3
 .side_box
   padding: 15px 15px 60px 15px
   margin-bottom: 20px
-  +linear-gradient(color-stops(#e8f5fd, #fff))
   +border-radius(8px)
+  @include background(linear-gradient(color-stops(#e8f5fd, #fff)))
       
 #body
   +float-left
   width: 75%
-  
+
+  .tabs
+    margin-bottom: 2em
   ul
     list-style-type: disc
     margin-left: 15px
     margin-bottom: 15px
+
+  ul.ui-tabs-nav
+    list-style-type: none
+    margin: 0
+    font-size: 12px
   
 .clear
   clear: both

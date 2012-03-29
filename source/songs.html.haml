@@ -1,0 +1,87 @@
+%h2 Songs
+
+%h3 List all
+
+%p Lists all the songs that belong to this user
+
+%h4 GET /songs.json OR /songs.xml
+
+%h5 Response
+
+.tabs
+  %ul
+    %li= link_to "JSON response", "#index-json"
+    %li= link_to "XML Response", "#index-xml"
+
+  #index-json
+    %pre
+      %code
+        :preserve
+          [
+            {
+              title: &quot;Shut Up&quot;,
+              song_file_size: 192968,
+              song_file_name: &quot;06 Shut Up.mp3&quot;,
+              url: &quot;http://assets.albumexposure.com/song/file/2317/06%20Shut%20Up.mp3&quot;,
+              artist: &quot;Five Iron Frenzy&quot;
+            }
+            ...
+          ]
+  #index-xml
+    %pre
+      %code
+        :preserve
+          &lt;songs type=&quot;array&quot;&gt;
+            &lt;song&gt;
+            &lt;artist&gt;Five Iron Frenzy&lt;/artist&gt;
+            &lt;song-file-name&gt;06 Shut Up.mp3&lt;/song-file-name&gt;
+            &lt;song-file-size type=&quot;integer&quot;&gt;192968&lt;/song-file`-size&gt;
+            &lt;title&gt;Shut Up&lt;/title&gt;
+            &lt;url&gt;http://assets.albumexposure.com/song/file/2317/06%20Shut%20Up.mp3&lt;/url&gt;
+            &lt;/song&gt;
+            ...
+          &lt;/songs&gt;
+
+%h3 List free
+
+%p Lists all royalty-free songs available to the user
+
+%h4 GET /songs/free.json OR /songs/free.xml
+
+%h5 Response
+
+.tabs
+  %ul
+    %li= link_to "JSON response", "#free-json"
+    %li= link_to "XML Response", "#free-xml"
+
+  #free-json
+    %pre
+      %code
+        :preserve
+          [
+            {
+              artist: &quot;Molly Jenson&quot;,
+              title: &quot;Give It Time&quot;,
+              song_file_name: &quot;GiveItTime.mp3&quot;,
+              url: &quot;http://assets.albumexposure.com/song/file/9/GiveItTime.mp3&quot;
+            }
+            ...
+          ]
+
+  #free-xml
+    %pre
+      %code
+        :preserve
+          &lt;songs type=&quot;array&quot;&gt;
+            &lt;song&gt;
+              &lt;artist&gt;Molly Jenson&lt;/artist&gt;
+              &lt;song-file-name&gt;GiveItTime.mp3&lt;/song-file-name&gt;
+              &lt;title&gt;Give It Time&lt;/title&gt;
+              &lt;url&gt;http://assets.albumexpsure.com/song/file/9/GiveItTime.mp3&lt;/url&gt;
+            &lt;/song&gt;
+            ...
+          &lt;/songs&gt;
+          
+- # TODO: Create available but undocumented
+

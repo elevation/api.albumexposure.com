@@ -1,0 +1,78 @@
+%h2 Comments
+
+%p * All comment operations apply to an album
+  
+%p DEPRICATED: The comments requested as XML currently returns a deprecated representation of the comments which is a string representation of each spread separated by "-----"
+
+%h4 GET /albums/\#{album.permalink}/comments.xml OR /albums/\#{album.permalink}/comments.json
+
+%h5 Response
+
+.tabs
+  %ul
+    %li= link_to "JSON response", "#comments-json"
+    %li= link_to "Future XML response", "#comments-xml"
+    %li= link_to "Current depricated XML response", "#comments-dxml"
+
+  #comments-json
+    %pre
+      %code
+        :preserve
+          [
+            {
+              "album_id": "6562", 
+              "created_at": "2011-03-03 17:11:36 -0800", 
+              "comments": 
+              {
+                "741798":"first!",
+                741800":"second!",
+                "741797":"third!"
+              }
+            }
+            ...
+          ]
+
+  #comments-xml
+    %pre
+      %code
+        :preserve
+          &lt;comments type=&quot;array&quot;&gt;
+            &lt;comment&gt;
+              &lt;album-id type=&quot;integer&quot;&gt;6562&lt;/album-id&gt;
+              &lt;created-at type=&quot;datetime&quot;&gt;2011-03-03 17:11:36 -0800&lt;/created-at&gt;
+              &lt;id type=&quot;integer&quot;&gt;41508&lt;/id&gt;
+              &lt;spread_comments&gt;
+                &lt;spread_comment spread_id=&quot;1&quot;&gt;first!&lt;/comment&gt;
+                &lt;spread_comment spread_id=&quot;2&quot;&gt;second!&lt;/comment&gt;
+              &lt;/spread_comments&gt;
+            &lt;/comment&gt;
+            &lt;comment&gt;
+            ...
+            &lt;/comment&gt;
+          &lt;/comments&gt;
+
+  #comments-dxml
+    %pre
+      %code
+        :preserve
+          &lt;comments type=&quot;array&quot;&gt;
+            &lt;comment&gt;
+              &lt;album-id type=&quot;integer&quot;&gt;6562&lt;/album-id&gt;
+              &lt;created-at type=&quot;datetime&quot;&gt;2011-03-03 17:11:36 -0800&lt;/created-at&gt;
+              &lt;id type=&quot;integer&quot;&gt;41508&lt;/id&gt;
+              &lt;text&gt;Spread 1:
+              first!
+
+              ----
+              Spread 2:
+              second!
+
+              ----
+              ...
+              &lt;/text&gt;
+            &lt;/comment&gt;
+            &lt;comment&gt;
+            ...
+            &lt;/comment&gt;
+          &lt;/comments&gt;
+    

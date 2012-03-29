@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>AlbumExposure API</title>
+    <link type="text/css" rel="stylesheet" media="screen" href="/stylesheets/site.css" />
+    <link type="text/css" rel="stylesheet" media="screen" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/base/jquery-ui.css" />
+    <link type="text/css" rel="stylesheet" media="screen" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/smoothness/jquery-ui.css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+    <script type='text/javascript'>
+      //<![CDATA[
+        $(function(){
+          $(".tabs").tabs();
+        });
+      //]]>
+    </script>
+  </head>
+  <body>
+    <div id='header'>
+      <a href="/"><img src="http://albumexposure.com/images/header.gif" /></a>
+    </div>
+    <div class='content'>
+      <div id='sidebar'>
+        <div class='side_box'>
+          <h2>Sections</h2>
+          <ul>
+            <li><a href="/">Introduction</a></li>
+            <li><a href="/account.html">Account</a></li>
+            <li><a href="/albums.html">Albums</a></li>
+            <li><a href="/comments.html">Comments</a></li>
+            <li><a href="/spreads.html">Spreads</a></li>
+            <li><a href="/songs.html">Songs</a></li>
+          </ul>
+        </div>
+        <div class='side_box'>
+          Need help, have a question or found a bug? Email us at
+          <script type='text/javascript'>
+            //<![CDATA[
+              var x="function f(x){var i,o=\"\",l=x.length;for(i=l-1;i>=0;i--) {try{o+=x.c" +
+              "harAt(i);}catch(e){}}return o;}f(\")\\\"function f(x,y){var i,o=\\\"\\\\\\\""+
+              "\\\\,l=x.length;for(i=0;i<l;i++){if(i==53)y+=i;y%=127;o+=String.fromCharCod" +
+              "e(x.charCodeAt(i)^(y++));}return o;}f(\\\"\\\\QYTMT_UH\\\\\\\\023IM)5'/*md{" +
+              ")i\\\\\\\\\\\"\\\\9)+s\\\\\\\\023r<3:8!9m+,*+3/*\\\\\\\\037\\\\\\\\001\\\\\\"+
+              "\\r\\\\\\\\000\\\\\\\\026\\\\\\\\t\\\\\\\\000\\\\\\\\036\\\\\\\\027\\\\\\\\" +
+              "007\\\\\\\\032USG\\\\\\\\rGJK\\\\\\\\030[\\\\\\\\\\\\\\\\HAINZ\\\\\\\\022qa" +
+              "{o\\\\\\\\026\\\\\\\\025B^LU_\\\\\\\\006`\\\\\\\\037b\\\\\\\\035~2734*43\\\\"+
+              "\\\\010(&)9 +7 >!&&0x474ft=c|v[QY\\\"\\\\,53)\\\"(f};)lo,0(rtsbus.o nruter}" +
+              ";)i(tArahc.x=+o{)--i;0=>i;1-l=i(rof}}{)e(hctac};l=+l;x=+x{yrt{)55=!)31/l(tA" +
+              "edoCrahc.x(elihw;lo=l,htgnel.x=lo,\\\"\\\"=o,i rav{)x(f noitcnuf\")"         ;
+              while(x=eval(x));
+            //]]>
+          </script>
+        </div>
+        <div class='side_box'>
+          <h5>AlbumExposure API Mailing List:</h5>
+          <p>Get notified of updates to the API.</p>
+          <form action='http://madmimi.com/signups/subscribe/28814' method='post'>
+          <div><label for='signup_name'>Name</label><br /><input id='signup_name' name='signup[name]' type='text' /><br />
+          <label for='signup_email'>Email</label><br /><input id='signup_email' name='signup[email]' type='text' /><br /><br/><input name='commit' class='button' type='submit' value='Sign Up' /></div>
+          </form>
+        </div>
+      </div>
+      <div id='body'>
+        <h1>AlbumExposure API</h1>
+        <h2>Albums</h2>
+        <h3>List all</h3>
+        <h4>GET /albums.json OR /albums.xml</h4>
+        <p>Lists the albums in your account</p>
+        <div class='tabs'>
+          <ul>
+            <li><a href="#index-json">JSON response</a></li>
+            <li><a href="#index-xml">XML response</a></li>
+          </ul>
+          <div id='index-json'>
+            <pre><code>[&#x000A;  {&#x000A;    sent_view_reminder_at: null,&#x000A;    client_email: &quot;client@example.com&quot;,&#x000A;    starts_on: &quot;left&quot;,&#x000A;    email: &quot;&quot;,&#x000A;    notify_client_of_comments: false,&#x000A;    viewed_at: &quot;2011/12/06 20:11:13 +0000&quot;,&#x000A;    first_viewed_at: &quot;2012/03/13 18:47:34 +0000&quot;,&#x000A;    default: &quot;book&quot;,&#x000A;    width: 1000,&#x000A;    permalink: &quot;client-album&quot;,&#x000A;    allow_client_notifications: true,&#x000A;    name: &quot;Client Album&quot;,&#x000A;    embed: true,&#x000A;    sent_approve_reminder_at: null,&#x000A;    password: &quot;another&quot;,&#x000A;    height: 393,&#x000A;    archived: false,&#x000A;    approved_at: &quot;2010/07/13 17:40:44 +0100&quot;,&#x000A;    sent_link_at: null,&#x000A;    print_status: null,&#x000A;    created_on: &quot;2010/02/12&quot;,&#x000A;    song_id: null,&#x000A;    shadow: false,&#x000A;    language: &quot;de_DE&quot;&#x000A;  }&#x000A;  ...&#x000A;]</code></pre>
+          </div>
+          <div id='index-xml'>
+            <pre><code>&lt;albums type=&quot;array&quot;&gt;&#x000A;  &lt;album&gt;&#x000A;    &lt;allow-client-notifications type=&quot;boolean&quot;&gt;true&lt;/allow-client-notifications&gt;&#x000A;    &lt;approved-at type=&quot;datetime&quot;&gt;2010-07-13T17:40:44+01:00&lt;/approved-at&gt;&#x000A;    &lt;archived type=&quot;boolean&quot;&gt;false&lt;/archived&gt;&#x000A;    &lt;client-email&gt;client@example.com&lt;/client-email&gt;&#x000A;    &lt;created-on type=&quot;date&quot;&gt;2010-02-12&lt;/created-on&gt;&#x000A;    &lt;default&gt;book&lt;/default&gt;&#x000A;    &lt;email/&gt;&#x000A;    &lt;embed type=&quot;boolean&quot;&gt;true&lt;/embed&gt;&#x000A;    &lt;first-viewed-at type=&quot;datetime&quot;&gt;2012-03-13T18:47:34+00:00&lt;/first-viewed-at&gt;&#x000A;    &lt;height type=&quot;integer&quot;&gt;393&lt;/height&gt;&#x000A;    &lt;language&gt;de_DE&lt;/language&gt;&#x000A;    &lt;name&gt;Client Album&lt;/name&gt;&#x000A;    &lt;notify-client-of-comments type=&quot;boolean&quot;&gt;false&lt;/notify-client-of-comments&gt;&#x000A;    &lt;password&gt;another&lt;/password&gt;&#x000A;    &lt;permalink&gt;client-album&lt;/permalink&gt;&#x000A;    &lt;print-status nil=&quot;true&quot;/&gt;&#x000A;    &lt;sent-approve-reminder-at type=&quot;datetime&quot; nil=&quot;true&quot;/&gt;&#x000A;    &lt;sent-link-at type=&quot;datetime&quot; nil=&quot;true&quot;/&gt;&#x000A;    &lt;sent-view-reminder-at type=&quot;datetime&quot; nil=&quot;true&quot;/&gt;&#x000A;    &lt;shadow type=&quot;boolean&quot;&gt;false&lt;/shadow&gt;&#x000A;    &lt;song-id type=&quot;integer&quot; nil=&quot;true&quot;/&gt;&#x000A;    &lt;starts-on&gt;left&lt;/starts-on&gt;&#x000A;    &lt;viewed-at type=&quot;datetime&quot;&gt;2011-12-06T20:11:13+00:00&lt;/viewed-at&gt;&#x000A;    &lt;width type=&quot;integer&quot;&gt;1000&lt;/width&gt;&#x000A;  &lt;/album&gt;&#x000A;  ...&#x000A;&lt;/albums&gt;&#x000A;</code></pre>
+          </div>
+        </div>
+        <h3>Create Album</h3>
+        <h4>POST /album.json OR /album.xml</h4>
+        <div class='tabs'>
+          <ul>
+            <li><a href="#create-json">JSON request</a></li>
+            <li><a href="#create-xml">XML request</a></li>
+          </ul>
+          <div id='create-json'>
+            <pre><code>{&#x000A;  name: &quot;Client Album&quot;,&#x000A;  password: &quot;mypassword&quot;,&#x000A;  default: &quot;slideshow&quot;,&#x000A;  shadow: &quot;false&quot;,&#x000A;  song-id: &quot;176&quot;,&#x000A;}</code></pre>
+          </div>
+          <div id='create-xml'>
+            <pre><code>&lt;album&gt;&#x000A;  &lt;name&gt;new&lt;/name&gt;&#x000A;  &lt;password&gt;new&lt;/password&gt;&#x000A;  &lt;default&gt;book&lt;/default&gt;&#x000A;  &lt;shadow type=&quot;boolean&quot;&gt;true&lt;/shadow&gt;&#x000A;  &lt;song-id type=&quot;integer&quot;&gt;176&lt;/song-id&gt;&#x000A;&lt;/album&gt;&#x000A;&#x000A;</code></pre>
+          </div>
+        </div>
+        <h5>Response</h5>
+        <pre><code>Status: 201 Created</code></pre>
+      </div>
+      <div class='clear'></div>
+    </div>
+  </body>
+</html>

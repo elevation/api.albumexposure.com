@@ -1,0 +1,62 @@
+!!!
+%html
+  %head
+    %title AlbumExposure API
+    = stylesheet_link_tag :site
+
+    = stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/base/jquery-ui.css"
+    = stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/smoothness/jquery-ui.css"
+    
+
+    = javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+    = javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"
+
+    :javascript
+      $(function(){
+        $(".tabs").tabs();
+      });
+      
+  %body
+    #header
+      = link_to image_tag("http://albumexposure.com/images/header.gif"), "/"
+
+    .content
+      #sidebar
+        .side_box
+          %h2 Sections
+          %ul
+            %li= link_to "Introduction", "/"
+            %li= link_to "Account", "/account.html"
+            %li= link_to "Albums", "/albums.html"
+            %li= link_to "Comments", "/comments.html"
+            %li= link_to "Spreads", "/spreads.html"
+            %li= link_to "Songs", "/songs.html"
+        
+        .side_box
+          Need help, have a question or found a bug? Email us at
+          :javascript
+            var x="function f(x){var i,o=\"\",l=x.length;for(i=l-1;i>=0;i--) {try{o+=x.c" +
+            "harAt(i);}catch(e){}}return o;}f(\")\\\"function f(x,y){var i,o=\\\"\\\\\\\""+
+            "\\\\,l=x.length;for(i=0;i<l;i++){if(i==53)y+=i;y%=127;o+=String.fromCharCod" +
+            "e(x.charCodeAt(i)^(y++));}return o;}f(\\\"\\\\QYTMT_UH\\\\\\\\023IM)5'/*md{" +
+            ")i\\\\\\\\\\\"\\\\9)+s\\\\\\\\023r<3:8!9m+,*+3/*\\\\\\\\037\\\\\\\\001\\\\\\"+
+            "\\r\\\\\\\\000\\\\\\\\026\\\\\\\\t\\\\\\\\000\\\\\\\\036\\\\\\\\027\\\\\\\\" +
+            "007\\\\\\\\032USG\\\\\\\\rGJK\\\\\\\\030[\\\\\\\\\\\\\\\\HAINZ\\\\\\\\022qa" +
+            "{o\\\\\\\\026\\\\\\\\025B^LU_\\\\\\\\006`\\\\\\\\037b\\\\\\\\035~2734*43\\\\"+
+            "\\\\010(&)9 +7 >!&&0x474ft=c|v[QY\\\"\\\\,53)\\\"(f};)lo,0(rtsbus.o nruter}" +
+            ";)i(tArahc.x=+o{)--i;0=>i;1-l=i(rof}}{)e(hctac};l=+l;x=+x{yrt{)55=!)31/l(tA" +
+            "edoCrahc.x(elihw;lo=l,htgnel.x=lo,\\\"\\\"=o,i rav{)x(f noitcnuf\")"         ;
+            while(x=eval(x));
+          
+        .side_box
+          %h5 AlbumExposure API Mailing List:
+          %p Get notified of updates to the API.
+          :plain
+            <form action='http://madmimi.com/signups/subscribe/28814' method='post'>
+            <div><label for='signup_name'>Name</label><br /><input id='signup_name' name='signup[name]' type='text' /><br />
+            <label for='signup_email'>Email</label><br /><input id='signup_email' name='signup[email]' type='text' /><br /><br/><input name='commit' class='button' type='submit' value='Sign Up' /></div>
+            </form>
+      #body
+        %h1 AlbumExposure API
+        = yield
+      .clear
