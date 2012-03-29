@@ -22,7 +22,7 @@ namespace :deploy do
   end
  
   task :build_code, :except => { :no_release => true } do
-    run "/home/albumexposure/.gem/ruby/1.8/gems/staticmatic-0.11.1/bin/staticmatic build #{latest_release}"
+    run "cd #{latest_release} && /usr/bin/middleman build"
   end
 end
 
