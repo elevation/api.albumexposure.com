@@ -118,3 +118,45 @@
 %pre
   %code
     Status: 201 Created
+
+%br
+
+%h3 Update Album
+
+%h4 PUT /albums/123.json OR /albums/123.xml
+
+.tabs
+  %ul
+    %li= link_to "JSON request", "#update-json"
+    %li= link_to "XML request", "#update-xml"
+
+  #update-json
+    %pre
+      %code
+        :preserve
+          {
+            name: &quot;Client Album&quot;,
+            password: &quot;mypassword&quot;,
+            default: &quot;slideshow&quot;,
+            shadow: &quot;false&quot;,
+            song-id: &quot;176&quot;,
+          }
+
+  #update-xml
+    %pre
+      %code
+        :preserve
+          &lt;album&gt;
+            &lt;name&gt;new&lt;/name&gt;
+            &lt;password&gt;new&lt;/password&gt;
+            &lt;default&gt;book&lt;/default&gt;
+            &lt;shadow type=&quot;boolean&quot;&gt;true&lt;/shadow&gt;
+            &lt;song-id type=&quot;integer&quot;&gt;176&lt;/song-id&gt;
+          &lt;/album&gt;
+
+
+%h5 Response
+%pre
+  %code
+    Status: 200 OK
+
