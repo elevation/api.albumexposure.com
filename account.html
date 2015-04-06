@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>AlbumExposure API</title>
+    <link href="/stylesheets/site.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/base/jquery-ui.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/smoothness/jquery-ui.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js" type="text/javascript"></script>
+    <script type='text/javascript'>
+      //<![CDATA[
+$(function(){$(".tabs").tabs()})
+//]]>
+    </script>
+  </head>
+  <body>
+    <div id='header'>
+      <a href="/"><img src="http://assets.albumexposure.com/images/header.png" /></a>
+    </div>
+    <div class='content'>
+      <div id='sidebar'>
+        <div class='side_box'>
+          <h2>Sections</h2>
+          <ul>
+            <li><a href="/">Introduction</a></li>
+            <li><a href="/account.html">Account</a></li>
+            <li><a href="/albums.html">Albums</a></li>
+            <li><a href="/comments.html">Comments</a></li>
+            <li><a href="/spreads.html">Spreads</a></li>
+            <li><a href="/songs.html">Songs</a></li>
+          </ul>
+        </div>
+        <div class='side_box'>
+          Need help, have a question or found a bug? Email us at
+          <script type='text/javascript'>
+            //<![CDATA[
+var x='function f(x){var i,o="",l=x.length;for(i=l-1;i>=0;i--) {try{o+=x.charAt(i);}catch(e){}}return o;}f(")\\"function f(x,y){var i,o=\\"\\\\\\"\\\\,l=x.length;for(i=0;i<l;i++){if(i==53)y+=i;y%=127;o+=String.fromCharCode(x.charCodeAt(i)^(y++));}return o;}f(\\"\\\\QYTMT_UH\\\\\\\\023IM)5\'/*md{)i\\\\\\\\\\"\\\\9)+s\\\\\\\\023r<3:8!9m+,*+3/*\\\\\\\\037\\\\\\\\001\\\\\\\\r\\\\\\\\000\\\\\\\\026\\\\\\\\t\\\\\\\\000\\\\\\\\036\\\\\\\\027\\\\\\\\007\\\\\\\\032USG\\\\\\\\rGJK\\\\\\\\030[\\\\\\\\\\\\\\\\HAINZ\\\\\\\\022qa{o\\\\\\\\026\\\\\\\\025B^LU_\\\\\\\\006`\\\\\\\\037b\\\\\\\\035~2734*43\\\\\\\\010(&)9 +7 >!&&0x474ft=c|v[QY\\"\\\\,53)\\"(f};)lo,0(rtsbus.o nruter};)i(tArahc.x=+o{)--i;0=>i;1-l=i(rof}}{)e(hctac};l=+l;x=+x{yrt{)55=!)31/l(tAedoCrahc.x(elihw;lo=l,htgnel.x=lo,\\"\\"=o,i rav{)x(f noitcnuf")';while(x=eval(x));
+//]]>
+          </script>
+        </div>
+        <div class='side_box'>
+          <h5>AlbumExposure API Mailing List:</h5>
+          <p>Get notified of updates to the API.</p>
+          <form action='http://madmimi.com/signups/subscribe/28814' method='post'>
+          <div><label for='signup_name'>Name</label><br /><input id='signup_name' name='signup[name]' type='text' /><br />
+          <label for='signup_email'>Email</label><br /><input id='signup_email' name='signup[email]' type='text' /><br /><br/><input name='commit' class='button' type='submit' value='Sign Up' /></div>
+          </form>
+        </div>
+      </div>
+      <div id='body'>
+        <h1>AlbumExposure API</h1>
+        <h2>Account</h2>
+        <h3>SHOW</h3>
+        <h4>GET /account.json OR /account.xml</h4>
+        <p>Returns information about the current account.</p>
+        <h5>Response</h5>
+        <div class='tabs'>
+          <ul>
+            <li><a href="#show-json">JSON response</a></li>
+            <li><a href="#show-xml">XML response</a></li>
+          </ul>
+          <div id='show-json'>
+            <pre><code>{&#x000A;  first_name: &quot;Joe&quot;,&#x000A;  last_name: &quot;Moody&quot;,&#x000A;  login: &quot;joeuser&quot;,&#x000A;  email: &quot;joe@example.com&quot;,&#x000A;  second_email: &quot;&quot;,&#x000A;  third_email: &quot;&quot;,&#x000A;  company_name: &quot;Joe User Photography&quot;,&#x000A;  address: &quot;123 AnyStreet&quot;,&#x000A;  city: &quot;AnyCity&quot;,&#x000A;  state: &quot;CA&quot;,&#x000A;  zip: &quot;12345&quot;,&#x000A;  country: &quot;United States&quot;&#x000A;  bill_type: &quot;yearly&quot;,&#x000A;  card: &quot;XXXX-XXXX-XXXX-1111&quot;,&#x000A;  card_exp: &quot;2012/06/01 00:59:59 +0100&quot;,&#x000A;  card_type: &quot;visa&quot;,&#x000A;  color: &quot;#FFFFFF&quot;,&#x000A;  created_at: &quot;2007/09/10 11:02:57 +0100&quot;,&#x000A;  email_text: &quot;The first draft of your album is ready for your review and comment. To access this album please use the link and password below:&#x000A;  {masked_url}&#x000A;  Password: {password}&#x000A;&#x000A;  You can review the album multiple times. If you aren&#x27;t quite ready to send your comments just save them for later. When you submit your comments my team will be notified and we&#x27;ll make the changes that you&#x27;ve requested.&#x000A;&#x000A;  Let me know if you have any questions. Enjoy!&quot;,&#x000A;  language: &quot;&quot;,&#x000A;  logo_file_name: null,&#x000A;  logo_position: &quot;left&quot;,&#x000A;  masked_url: &quot;yourelevation.com/albums&quot;,&#x000A;  newsletter: true,&#x000A;  next_bill_date: &quot;3000/01/01&quot;,&#x000A;  paypal_email: &quot;joe@example.com&quot;,&#x000A;  presentation_term: &quot;pages&quot;,&#x000A;  status: &quot;current&quot;,&#x000A;  time_zone: &quot;Lisbon&quot;,&#x000A;  twitter_name: null,&#x000A;  url: null&#x000A;}&#x000A;</code></pre>
+          </div>
+          <div id='show-xml'>
+            <pre><code>&lt;user&gt;&#x000A;  &lt;first-name&gt;Joe&lt;/first-name&gt;&#x000A;  &lt;last-name&gt;User&lt;/last-name&gt;&#x000A;  &lt;login&gt;joeuser&lt;/login&gt;&#x000A;  &lt;email&gt;joe@example.com&lt;/email&gt;&#x000A;  &lt;second-email/&gt;&#x000A;  &lt;third-email/&gt;&#x000A;  &lt;company-name&gt;Joe User Photography&lt;/company-name&gt;&#x000A;  &lt;address&gt;123 AnyStreet&lt;/address&gt;&#x000A;  &lt;city&gt;AnyCity&lt;/city&gt;&#x000A;  &lt;state&gt;CA&lt;/state&gt;&#x000A;  &lt;zip&gt;12345&lt;/zip&gt;&#x000A;  &lt;country&gt;United States&lt;/country&gt;&#x000A;  &lt;bill-type&gt;yearly&lt;/bill-type&gt;&#x000A;  &lt;card&gt;XXXX-XXXX-XXXX-1111&lt;/card&gt;&#x000A;  &lt;card-exp type=&quot;datetime&quot;&gt;2012-06-01T00:59:59+01:00&lt;/card-exp&gt;&#x000A;  &lt;card-type&gt;visa&lt;/card-type&gt;&#x000A;  &lt;color&gt;#FFFFFF&lt;/color&gt;&#x000A;  &lt;created-at type=&quot;datetime&quot;&gt;2007-09-10T11:02:57+01:00&lt;/created-at&gt;&#x000A;  &lt;email-text&gt;The first draft of your album is ready for your review and comment. To access this album please use the link and password below:{masked_url}Password: {password}You can review the album multiple times. If you aren&#x27;t quite ready to send your comments just save them for later. When you submit your comments my team will be notified and we&#x27;ll make the changes that you&#x27;ve requested.Let me know if you have any questions. Enjoy!&lt;/email-text&gt;&#x000A;  &lt;language/&gt;&#x000A;  &lt;logo-file-name nil=&quot;true&quot;/&gt;&#x000A;  &lt;logo-position&gt;left&lt;/logo-position&gt;&#x000A;  &lt;masked-url&gt;yourelevation.com/albums&lt;/masked-url&gt;&#x000A;  &lt;newsletter type=&quot;boolean&quot;&gt;true&lt;/newsletter&gt;&#x000A;  &lt;next-bill-date type=&quot;date&quot;&gt;3000-01-01&lt;/next-bill-date&gt;&#x000A;  &lt;paypal-email&gt;joeuser@example&lt;/paypal-email&gt;&#x000A;  &lt;presentation-term&gt;pages&lt;/presentation-term&gt;&#x000A;  &lt;status&gt;current&lt;/status&gt;&#x000A;  &lt;time-zone&gt;Lisbon&lt;/time-zone&gt;&#x000A;  &lt;twitter-name nil=&quot;true&quot;/&gt;&#x000A;  &lt;url nil=&quot;true&quot;/&gt;&#x000A;&lt;/user&gt;&#x000A;&#x000A;</code></pre>
+          </div>
+        </div>
+        <h3>Create Account</h3>
+        <h4>POST /account.json OR /account.xml</h4>
+        <p>Create an AlbumExposure account. Required fields are:</p>
+        <ul>
+          <li>First name</li>
+          <li>Last name</li>
+          <li>Email</li>
+          <li>Login</li>
+          <li>Password</li>
+          <li>Password confirmation</li>
+          <li>Acceptance of AE privacy policy and terms of service</li>
+        </ul>
+        <div class='tabs'>
+          <ul>
+            <li><a href="#create-json">JSON request</a></li>
+            <li><a href="#create-xml">XML request</a></li>
+          </ul>
+          <div id='create-json'>
+            <pre><code>{&#x000A;  first_name: &quot;Joe&quot;,&#x000A;  last_name: &quot;User&quot;,&#x000A;  email: &quot;joe@example.com&quot;,&#x000A;  login: &quot;joeuser&quot;,&#x000A;  password: &quot;mypassword&quot;,&#x000A;  password_confirmation: &quot;mypassword&quot;,&#x000A;  company_name: &quot;Joe User Photography&quot;,&#x000A;  terms: &quot;true&quot;,&#x000A;  newsletter: &quot;true&quot;&#x000A;}</code></pre>
+          </div>
+          <div id='create-xml'>
+            <pre><code>&lt;user&gt;&#x000A;  &lt;first-name&gt;Joe&lt;/first-name&gt;&#x000A;  &lt;last-name&gt;User&lt;/last-name&gt;&#x000A;  &lt;company-name&gt;AlbumExposure&lt;/company-name&gt;&#x000A;  &lt;email&gt;joe@example.com&lt;/email&gt;&#x000A;  &lt;twitter-name&gt;@albumexposure&lt;/twitter-name&gt;&#x000A;  &lt;password&gt;mypassword&lt;/password&gt;&#x000A;  &lt;password-confirmation&gt;mypassword&lt;/password-confirmation&gt;&#x000A;  &lt;terms&gt;true&lt;/term&gt;&#x000A;  &lt;newsletter&gt;true&lt;/newsletter&gt;&#x000A;&lt;/user&gt;&#x000A;</code></pre>
+          </div>
+        </div>
+        <h5>Response</h5>
+        <pre><code>Status: 201 Created</code></pre>
+      </div>
+      <div class='clear'></div>
+    </div>
+  </body>
+</html>

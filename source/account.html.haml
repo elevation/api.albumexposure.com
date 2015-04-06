@@ -1,0 +1,153 @@
+%h2 Account
+
+%h3 SHOW
+
+%h4 GET /account.json OR /account.xml
+
+%p Returns information about the current account. 
+
+%h5 Response
+
+.tabs
+  %ul
+    %li= link_to "JSON response", "#show-json"
+    %li= link_to "XML response",  "#show-xml"
+
+  #show-json
+    %pre
+      %code
+        :preserve
+          {
+            first_name: &quot;Joe&quot;,
+            last_name: &quot;Moody&quot;,
+            login: &quot;joeuser&quot;,
+            email: &quot;joe@example.com&quot;,
+            second_email: &quot;&quot;,
+            third_email: &quot;&quot;,
+            company_name: &quot;Joe User Photography&quot;,
+            address: &quot;123 AnyStreet&quot;,
+            city: &quot;AnyCity&quot;,
+            state: &quot;CA&quot;,
+            zip: &quot;12345&quot;,
+            country: &quot;United States&quot;
+            bill_type: &quot;yearly&quot;,
+            card: &quot;XXXX-XXXX-XXXX-1111&quot;,
+            card_exp: &quot;2012/06/01 00:59:59 +0100&quot;,
+            card_type: &quot;visa&quot;,
+            color: &quot;#FFFFFF&quot;,
+            created_at: &quot;2007/09/10 11:02:57 +0100&quot;,
+            email_text: &quot;The first draft of your album is ready for your review and comment. To access this album please use the link and password below:
+            {masked_url}
+            Password: {password}
+
+            You can review the album multiple times. If you aren&#x27;t quite ready to send your comments just save them for later. When you submit your comments my team will be notified and we&#x27;ll make the changes that you&#x27;ve requested.
+
+            Let me know if you have any questions. Enjoy!&quot;,
+            language: &quot;&quot;,
+            logo_file_name: null,
+            logo_position: &quot;left&quot;,
+            masked_url: &quot;yourelevation.com/albums&quot;,
+            newsletter: true,
+            next_bill_date: &quot;3000/01/01&quot;,
+            paypal_email: &quot;joe@example.com&quot;,
+            presentation_term: &quot;pages&quot;,
+            status: &quot;current&quot;,
+            time_zone: &quot;Lisbon&quot;,
+            twitter_name: null,
+            url: null
+          }
+
+  #show-xml
+    %pre
+      %code
+        :preserve
+          &lt;user&gt;
+            &lt;first-name&gt;Joe&lt;/first-name&gt;
+            &lt;last-name&gt;User&lt;/last-name&gt;
+            &lt;login&gt;joeuser&lt;/login&gt;
+            &lt;email&gt;joe@example.com&lt;/email&gt;
+            &lt;second-email/&gt;
+            &lt;third-email/&gt;
+            &lt;company-name&gt;Joe User Photography&lt;/company-name&gt;
+            &lt;address&gt;123 AnyStreet&lt;/address&gt;
+            &lt;city&gt;AnyCity&lt;/city&gt;
+            &lt;state&gt;CA&lt;/state&gt;
+            &lt;zip&gt;12345&lt;/zip&gt;
+            &lt;country&gt;United States&lt;/country&gt;
+            &lt;bill-type&gt;yearly&lt;/bill-type&gt;
+            &lt;card&gt;XXXX-XXXX-XXXX-1111&lt;/card&gt;
+            &lt;card-exp type=&quot;datetime&quot;&gt;2012-06-01T00:59:59+01:00&lt;/card-exp&gt;
+            &lt;card-type&gt;visa&lt;/card-type&gt;
+            &lt;color&gt;#FFFFFF&lt;/color&gt;
+            &lt;created-at type=&quot;datetime&quot;&gt;2007-09-10T11:02:57+01:00&lt;/created-at&gt;
+            &lt;email-text&gt;The first draft of your album is ready for your review and comment. To access this album please use the link and password below:{masked_url}Password: {password}You can review the album multiple times. If you aren&#x27;t quite ready to send your comments just save them for later. When you submit your comments my team will be notified and we&#x27;ll make the changes that you&#x27;ve requested.Let me know if you have any questions. Enjoy!&lt;/email-text&gt;
+            &lt;language/&gt;
+            &lt;logo-file-name nil=&quot;true&quot;/&gt;
+            &lt;logo-position&gt;left&lt;/logo-position&gt;
+            &lt;masked-url&gt;yourelevation.com/albums&lt;/masked-url&gt;
+            &lt;newsletter type=&quot;boolean&quot;&gt;true&lt;/newsletter&gt;
+            &lt;next-bill-date type=&quot;date&quot;&gt;3000-01-01&lt;/next-bill-date&gt;
+            &lt;paypal-email&gt;joeuser@example&lt;/paypal-email&gt;
+            &lt;presentation-term&gt;pages&lt;/presentation-term&gt;
+            &lt;status&gt;current&lt;/status&gt;
+            &lt;time-zone&gt;Lisbon&lt;/time-zone&gt;
+            &lt;twitter-name nil=&quot;true&quot;/&gt;
+            &lt;url nil=&quot;true&quot;/&gt;
+          &lt;/user&gt;
+      
+      
+%h3 Create Account
+
+%h4 POST /account.json OR /account.xml
+
+%p Create an AlbumExposure account. Required fields are:
+
+%ul
+  %li First name
+  %li Last name
+  %li Email
+  %li Login
+  %li Password
+  %li Password confirmation
+  %li Acceptance of AE privacy policy and terms of service
+
+.tabs
+  %ul
+    %li= link_to "JSON request", "#create-json"
+    %li= link_to "XML request",  "#create-xml"
+
+  #create-json
+    %pre
+      %code
+        :preserve
+          {
+            first_name: &quot;Joe&quot;,
+            last_name: &quot;User&quot;,
+            email: &quot;joe@example.com&quot;,
+            login: &quot;joeuser&quot;,
+            password: &quot;mypassword&quot;,
+            password_confirmation: &quot;mypassword&quot;,
+            company_name: &quot;Joe User Photography&quot;,
+            terms: &quot;true&quot;,
+            newsletter: &quot;true&quot;
+          }
+  #create-xml
+    %pre
+      %code
+        :preserve
+          &lt;user&gt;
+            &lt;first-name&gt;Joe&lt;/first-name&gt;
+            &lt;last-name&gt;User&lt;/last-name&gt;
+            &lt;company-name&gt;AlbumExposure&lt;/company-name&gt;
+            &lt;email&gt;joe@example.com&lt;/email&gt;
+            &lt;twitter-name&gt;@albumexposure&lt;/twitter-name&gt;
+            &lt;password&gt;mypassword&lt;/password&gt;
+            &lt;password-confirmation&gt;mypassword&lt;/password-confirmation&gt;
+            &lt;terms&gt;true&lt;/term&gt;
+            &lt;newsletter&gt;true&lt;/newsletter&gt;
+          &lt;/user&gt;
+      
+%h5 Response
+%pre
+  %code
+    Status: 201 Created

@@ -1,0 +1,43 @@
+%h2 Introduction
+%p The AlbumExposure API is implemented as vanilla JSON/XML over HTTPS.  Send the Content-Type: application/json or application/xml header to identify the format along with the json or xml extension on the end of the request.
+    
+%h3 Making requests
+
+%p When you're using the API, it's always through an existing AlbumExposure user. AlbumExposure uses HTTP Basic Authentication over HTTPS.
+
+%p
+  %b Basic authentication will be depricated in the future in favor of OAUTH. Contact us for OAUTH credentials.
+
+%p Be sure to set both the 'Content-Type' and 'Accept' headers to the appropriate type to identify the request and response format. Example with json and Curl:
+
+%pre
+  %code
+    :escaped
+      curl -H 'Accept: application/json' -H 'Content-Type: application/json' \
+        -u username:password \
+      https://albumexposure.com/albums.json
+%br
+
+%h3 Responses
+
+%p If a request succeeds, it will return a status code in the 200 range and often, an JSON or XML formatted response. Note that, in general, if a request causes a new record to be created (like a new album, or spread, etc.), the response will use the "201 Created" status. Any other successful operation (like a successful query, delete, or update) will return a 200 status code.
+
+%p If a request fails, a non-200 status code will be returned, possibly with error information in JSON or XML format as the response's content. For instance, if a requested record could not be found, the HTTP response might look something like:
+
+%pre
+  %code
+    :escaped
+      HTTP/1.1 404 The record could not be found
+      Date: Thu, 16 Mar 2006 17:41:40 GMT
+      ...
+%br
+
+%h3 Conventions used in this documentation
+
+%p 
+  %b\#{text}
+  Indicates text that should be replaced by your own data
+
+%p 
+  %b ...
+  Indicates content from the response has been elided for brevity in documentation.
