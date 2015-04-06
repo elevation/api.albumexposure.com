@@ -1,12 +1,6 @@
-source "http://rubygems.org"
+# If you do not have OpenSSL installed, update
+# the following line to use "http://" instead
+source 'https://rubygems.org'
 
-gem "middleman", "~>2.0.15.1"
-
-group :production do
-  gem "therubyracer"
-end
-
-group :development do
-  gem "capistrano"
-  gem "railsless-deploy"
-end
+gem "middleman", "~>3.3.10"
+gem "middleman-gh-pages"
