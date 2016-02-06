@@ -68,41 +68,41 @@
             <li><a href="#index-xml">XML response</a></li>
           </ul>
           <div id='index-json'>
-            <pre><code>[&#x000A;  {&#x000A;    id: 123,&#x000A;    sent_view_reminder_at: null,&#x000A;    client_email: &quot;client@example.com&quot;,&#x000A;    starts_on: &quot;left&quot;,&#x000A;    email: &quot;&quot;,&#x000A;    notify_client_of_comments: false,&#x000A;    viewed_at: &quot;2011/12/06 20:11:13 +0000&quot;,&#x000A;    first_viewed_at: &quot;2012/03/13 18:47:34 +0000&quot;,&#x000A;    default: &quot;book&quot;,&#x000A;    width: 1000,&#x000A;    permalink: &quot;client-album&quot;,&#x000A;    allow_client_notifications: true,&#x000A;    name: &quot;Client Album&quot;,&#x000A;    embed: true,&#x000A;    sent_approve_reminder_at: null,&#x000A;    snapknot: false,&#x000A;    password: &quot;another&quot;,&#x000A;    height: 393,&#x000A;    archived: false,&#x000A;    approved_at: &quot;2010/07/13 17:40:44 +0100&quot;,&#x000A;    sent_link_at: null,&#x000A;    print_status: null,&#x000A;    created_on: &quot;2010/02/12&quot;,&#x000A;    song_id: null,&#x000A;    shadow: false,&#x000A;    language: &quot;de_DE&quot;&#x000A;  }&#x000A;  ...&#x000A;]</code></pre>
+            <pre><code>[&#x000A;  {&#x000A;    id: "1",&#x000A;    sent_view_reminder_at: null,&#x000A;    client_email: "client@example.com",&#x000A;    starts_on: "left",&#x000A;    email: "",&#x000A;    notify_client_of_comments: false,&#x000A;    viewed_at: "2011/12/06 20:11:13 +0000",&#x000A;    first_viewed_at: "2012/03/13 18:47:34 +0000",&#x000A;    default: "book",&#x000A;    width: 1000,&#x000A;    permalink: "client-album",&#x000A;    allow_client_notifications: true,&#x000A;    name: "Client Album",&#x000A;    embed: true,&#x000A;    sent_approve_reminder_at: null,&#x000A;    snapknot: false,&#x000A;    password: "another",&#x000A;    height: 393,&#x000A;    archived: false,&#x000A;    approved_at: "2010/07/13 17:40:44 +0100",&#x000A;    sent_link_at: null,&#x000A;    print_status: null,&#x000A;    created_on: "2010/02/12",&#x000A;    song_id: null,&#x000A;    shadow: false,&#x000A;    language: "de_DE"&#x000A;  }&#x000A;  ...&#x000A;]</code></pre>
           </div>
           <div id='index-xml'>
-            <pre><code>&lt;albums type=&quot;array&quot;&gt;&#x000A;  &lt;album&gt;&#x000A;    &lt;id&gt;123&lt;/id&gt;&#x000A;    &lt;allow-client-notifications type=&quot;boolean&quot;&gt;true&lt;/allow-client-notifications&gt;&#x000A;    &lt;approved-at type=&quot;datetime&quot;&gt;2010-07-13T17:40:44+01:00&lt;/approved-at&gt;&#x000A;    &lt;archived type=&quot;boolean&quot;&gt;false&lt;/archived&gt;&#x000A;    &lt;client-email&gt;client@example.com&lt;/client-email&gt;&#x000A;    &lt;created-on type=&quot;date&quot;&gt;2010-02-12&lt;/created-on&gt;&#x000A;    &lt;default&gt;book&lt;/default&gt;&#x000A;    &lt;email/&gt;&#x000A;    &lt;embed type=&quot;boolean&quot;&gt;true&lt;/embed&gt;&#x000A;    &lt;first-viewed-at type=&quot;datetime&quot;&gt;2012-03-13T18:47:34+00:00&lt;/first-viewed-at&gt;&#x000A;    &lt;height type=&quot;integer&quot;&gt;393&lt;/height&gt;&#x000A;    &lt;language&gt;de_DE&lt;/language&gt;&#x000A;    &lt;name&gt;Client Album&lt;/name&gt;&#x000A;    &lt;notify-client-of-comments type=&quot;boolean&quot;&gt;false&lt;/notify-client-of-comments&gt;&#x000A;    &lt;password&gt;another&lt;/password&gt;&#x000A;    &lt;permalink&gt;client-album&lt;/permalink&gt;&#x000A;    &lt;print-status nil=&quot;true&quot;/&gt;&#x000A;    &lt;sent-approve-reminder-at type=&quot;datetime&quot; nil=&quot;true&quot;/&gt;&#x000A;    &lt;sent-link-at type=&quot;datetime&quot; nil=&quot;true&quot;/&gt;&#x000A;    &lt;sent-view-reminder-at type=&quot;datetime&quot; nil=&quot;true&quot;/&gt;&#x000A;    &lt;shadow type=&quot;boolean&quot;&gt;false&lt;/shadow&gt;&#x000A;    &lt;snapknot type=&quot;boolean&quot;&gt;false&lt;/snapknot&gt;&#x000A;    &lt;song-id type=&quot;integer&quot; nil=&quot;true&quot;/&gt;&#x000A;    &lt;starts-on&gt;left&lt;/starts-on&gt;&#x000A;    &lt;viewed-at type=&quot;datetime&quot;&gt;2011-12-06T20:11:13+00:00&lt;/viewed-at&gt;&#x000A;    &lt;width type=&quot;integer&quot;&gt;1000&lt;/width&gt;&#x000A;  &lt;/album&gt;&#x000A;  ...&#x000A;&lt;/albums&gt;&#x000A;</code></pre>
+            <pre><code>&lt;albums type=&quot;array&quot;&gt;&#x000A;  &lt;album&gt;&#x000A;    &lt;id&gt;1&lt;/id&gt;&#x000A;    &lt;allow-client-notifications type=&quot;boolean&quot;&gt;true&lt;/allow-client-notifications&gt;&#x000A;    &lt;approved-at type=&quot;datetime&quot;&gt;2010-07-13T17:40:44+01:00&lt;/approved-at&gt;&#x000A;    &lt;archived type=&quot;boolean&quot;&gt;false&lt;/archived&gt;&#x000A;    &lt;client-email&gt;client@example.com&lt;/client-email&gt;&#x000A;    &lt;created-on type=&quot;date&quot;&gt;2010-02-12&lt;/created-on&gt;&#x000A;    &lt;default&gt;book&lt;/default&gt;&#x000A;    &lt;email/&gt;&#x000A;    &lt;embed type=&quot;boolean&quot;&gt;true&lt;/embed&gt;&#x000A;    &lt;first-viewed-at type=&quot;datetime&quot;&gt;2012-03-13T18:47:34+00:00&lt;/first-viewed-at&gt;&#x000A;    &lt;height type=&quot;integer&quot;&gt;393&lt;/height&gt;&#x000A;    &lt;language&gt;de_DE&lt;/language&gt;&#x000A;    &lt;name&gt;Client Album&lt;/name&gt;&#x000A;    &lt;notify-client-of-comments type=&quot;boolean&quot;&gt;false&lt;/notify-client-of-comments&gt;&#x000A;    &lt;password&gt;another&lt;/password&gt;&#x000A;    &lt;permalink&gt;client-album&lt;/permalink&gt;&#x000A;    &lt;print-status nil=&quot;true&quot;/&gt;&#x000A;    &lt;sent-approve-reminder-at type=&quot;datetime&quot; nil=&quot;true&quot;/&gt;&#x000A;    &lt;sent-link-at type=&quot;datetime&quot; nil=&quot;true&quot;/&gt;&#x000A;    &lt;sent-view-reminder-at type=&quot;datetime&quot; nil=&quot;true&quot;/&gt;&#x000A;    &lt;shadow type=&quot;boolean&quot;&gt;false&lt;/shadow&gt;&#x000A;    &lt;snapknot type=&quot;boolean&quot;&gt;false&lt;/snapknot&gt;&#x000A;    &lt;song-id type=&quot;integer&quot; nil=&quot;true&quot;/&gt;&#x000A;    &lt;starts-on&gt;left&lt;/starts-on&gt;&#x000A;    &lt;viewed-at type=&quot;datetime&quot;&gt;2011-12-06T20:11:13+00:00&lt;/viewed-at&gt;&#x000A;    &lt;width type=&quot;integer&quot;&gt;1000&lt;/width&gt;&#x000A;  &lt;/album&gt;&#x000A;  ...&#x000A;&lt;/albums&gt;</code></pre>
           </div>
         </div>
         <h3>Create Album</h3>
-        <h4>POST /album.json OR /album.xml</h4>
+        <h4>POST /albums.json OR /albums.xml</h4>
         <div class='tabs'>
           <ul>
             <li><a href="#create-json">JSON request</a></li>
             <li><a href="#create-xml">XML request</a></li>
           </ul>
           <div id='create-json'>
-            <pre><code>{&#x000A;  name: &quot;Client Album&quot;,&#x000A;  password: &quot;mypassword&quot;,&#x000A;  default: &quot;slideshow&quot;,&#x000A;  shadow: &quot;false&quot;,&#x000A;  song-id: &quot;176&quot;,&#x000A;}</code></pre>
+            <pre><code>{&#x000A;  "name": "Client Album",&#x000A;  "password": "mypassword",&#x000A;  "default": "slideshow",&#x000A;  "shadow": "false",&#x000A;  "song-id": "176",&#x000A;}</code></pre>
           </div>
           <div id='create-xml'>
-            <pre><code>&lt;album&gt;&#x000A;  &lt;name&gt;new&lt;/name&gt;&#x000A;  &lt;password&gt;new&lt;/password&gt;&#x000A;  &lt;default&gt;book&lt;/default&gt;&#x000A;  &lt;shadow type=&quot;boolean&quot;&gt;true&lt;/shadow&gt;&#x000A;  &lt;song-id type=&quot;integer&quot;&gt;176&lt;/song-id&gt;&#x000A;&lt;/album&gt;&#x000A;&#x000A;</code></pre>
+            <pre><code>&lt;album&gt;&#x000A;  &lt;name&gt;new&lt;/name&gt;&#x000A;  &lt;password&gt;new&lt;/password&gt;&#x000A;  &lt;default&gt;book&lt;/default&gt;&#x000A;  &lt;shadow type=&quot;boolean&quot;&gt;true&lt;/shadow&gt;&#x000A;  &lt;song-id type=&quot;integer&quot;&gt;176&lt;/song-id&gt;&#x000A;&lt;/album&gt;</code></pre>
           </div>
         </div>
         <h5>Response</h5>
         <pre><code>Status: 201 Created</code></pre>
         <br>
         <h3>Update Album</h3>
-        <h4>PUT /albums/#{permalink}.json OR /albums/#{permalink}.xml</h4>
+        <h4>PUT /albums/1.json OR /albums/1.xml</h4>
         <div class='tabs'>
           <ul>
             <li><a href="#update-json">JSON request</a></li>
             <li><a href="#update-xml">XML request</a></li>
           </ul>
           <div id='update-json'>
-            <pre><code>{&#x000A;  name: &quot;Client Album&quot;,&#x000A;  password: &quot;mypassword&quot;,&#x000A;  default: &quot;slideshow&quot;,&#x000A;  shadow: &quot;false&quot;,&#x000A;  song-id: &quot;176&quot;,&#x000A;}&#x000A;</code></pre>
+            <pre><code>{&#x000A;  name: "Client Album",&#x000A;  password: "mypassword",&#x000A;  default: "slideshow",&#x000A;  shadow: "false",&#x000A;  song-id: "176",&#x000A;}&#x000A;</code></pre>
           </div>
           <div id='update-xml'>
-            <pre><code>&lt;album&gt;&#x000A;  &lt;name&gt;new&lt;/name&gt;&#x000A;  &lt;password&gt;new&lt;/password&gt;&#x000A;  &lt;default&gt;book&lt;/default&gt;&#x000A;  &lt;shadow type=&quot;boolean&quot;&gt;true&lt;/shadow&gt;&#x000A;  &lt;song-id type=&quot;integer&quot;&gt;176&lt;/song-id&gt;&#x000A;&lt;/album&gt;&#x000A;&#x000A;</code></pre>
+            <pre><code>&lt;album&gt;&#x000A;  &lt;name&gt;new&lt;/name&gt;&#x000A;  &lt;password&gt;new&lt;/password&gt;&#x000A;  &lt;default&gt;book&lt;/default&gt;&#x000A;  &lt;shadow type=&quot;boolean&quot;&gt;true&lt;/shadow&gt;&#x000A;  &lt;song-id type=&quot;integer&quot;&gt;176&lt;/song-id&gt;&#x000A;&lt;/album&gt;</code></pre>
           </div>
         </div>
         <h5>Response</h5>
