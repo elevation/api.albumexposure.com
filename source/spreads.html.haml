@@ -1,7 +1,7 @@
 %h2 Spreads
 
 %p * All spread operations apply to an album
-  
+
 %h3 List spreads
 
 %h4 GET /album/\#{album.permalink}/spreads.json OR /album/\#{album.permalink}/spreads.xml
@@ -21,14 +21,14 @@
           [
             {
               id: "123"
-              image_updated_at: &quot;2012/03/13 18:22:24 +0000&quot;,
+              image_updated_at: "2012/03/13 18:22:24 +0000",
               image_urls: {
-                left: &quot;http://assets.albumexposure.com/spreads/1/left/page_01.jpg?1331662944&quot;,
-                right: &quot;http://assets.albumexposure.com/spreads/1/right/page_01.jpg?1331662944&quot;,
-                web: &quot;http://assets.albumexposure.com/spreads/1/web/page_01.jpg?1331662944&quot;,
-                thumb: &quot;http://assets.albumexposure.com/spreads/1/thumb/page_01.jpg?1331662944&quot;
+                left: "http://assets.albumexposure.com/spreads/1/left/page_01.jpg?1331662944",
+                right: "http://assets.albumexposure.com/spreads/1/right/page_01.jpg?1331662944",
+                web: "http://assets.albumexposure.com/spreads/1/web/page_01.jpg?1331662944",
+                thumb: "http://assets.albumexposure.com/spreads/1/thumb/page_01.jpg?1331662944"
               },
-              image_file_name: &quot;page_01.jpg&quot;,
+              image_file_name: "page_01.jpg",
               position: 1,
               image_file_size: 80841,
               image_processing: false
@@ -37,43 +37,45 @@
   #index-xml
     %pre
       %code
-        :preserve
-          &lt;spreads type=&quot;array&quot;&gt;
-            &lt;spread&gt;
-              &lt;id type=&quot;integer&quot;&gt;123&lt;/id&gt;
-              &lt;image-file-name&gt;page_01.jpg&lt;/image-file-name&gt;
-              &lt;image-file-size type=&quot;integer&quot;&gt;80841&lt;/image-file-size&gt;
-              &lt;image-processing type=&quot;boolean&quot;&gt;false&lt;/image-processing&gt;
-              &lt;image-updated-at type=&quot;datetime&quot;&gt;2012-03-13T18:22:24+00:00&lt;/image-updated-at&gt;
-              &lt;position type=&quot;integer&quot;&gt;1&lt;/position&gt;
-              &lt;image-urls&gt;
-                &lt;left&gt;http://assets.albumexposure.com/spreads/1/left/page_01.jpg?1331662944&lt;/left&gt;
-                &lt;right&gt;http://assets.albumexposure.com/spreads/1/right/page_01.jpg?1331662944&lt;/right&gt;
-                &lt;web&gt;http://assets.albumexposure.com/spreads/1/web/page_01.jpg?1331662944&lt;/web&gt;
-                &lt;thumb&gt;http://assets.albumexposure.com/spreads/1/thumb/page_01.jpg?1331662944&lt;/thumb&gt;
-              &lt;/image-urls&gt;
-            &lt;/spread&gt;
-          &lt;/spreads&gt;
+        = preserve do
+          :escaped
+            <spreads type="array">
+              <spread>
+                <id type="integer">123</id>
+                <image-file-name>page_01.jpg</image-file-name>
+                <image-file-size type="integer">80841</image-file-size>
+                <image-processing type="boolean">false</image-processing>
+                <image-updated-at type="datetime">2012-03-13T18:22:24+00:00</image-updated-at>
+                <position type="integer">1</position>
+                <image-urls>
+                  <left>http://assets.albumexposure.com/spreads/1/left/page_01.jpg?1331662944</left>
+                  <right>http://assets.albumexposure.com/spreads/1/right/page_01.jpg?1331662944</right>
+                  <web>http://assets.albumexposure.com/spreads/1/web/page_01.jpg?1331662944</web>
+                  <thumb>http://assets.albumexposure.com/spreads/1/thumb/page_01.jpg?1331662944</thumb>
+                </image-urls>
+              </spread>
+            </spreads>
   #index-dxml
     %pre
       %code
-        :preserve
-          &lt;spreads type=&quot;array&quot;&gt;
-            &lt;spread&gt;
-              &lt;album-id type=&quot;integer&quot;&gt;456&lt;/album-id&gt;
-              &lt;id type=&quot;integer&quot;&gt;123&lt;/id&gt;
-              &lt;image-content-type&gt;image/jpeg&lt;/image-content-type&gt;
-              &lt;image-file-name&gt;page_01.jpg&lt;/image-file-name&gt;
-              &lt;image-file-size type=&quot;integer&quot;&gt;80841&lt;/image-file-size&gt;
-              &lt;image-processing type=&quot;boolean&quot;&gt;false&lt;/image-processing&gt;
-              &lt;image-updated-at type=&quot;datetime&quot;&gt;2010-10-26T16:38:19-07:00&lt;/image-updated-at&gt;
-              &lt;position type=&quot;integer&quot;&gt;1&lt;/position&gt;
-            &lt;/spread&gt;
-          &lt;/spreads&gt;
+        = preserve do
+          :escaped
+            <spreads type="array">
+              <spread>
+                <album-id type="integer">456</album-id>
+                <id type="integer">123</id>
+                <image-content-type>image/jpeg</image-content-type>
+                <image-file-name>page_01.jpg</image-file-name>
+                <image-file-size type="integer">80841</image-file-size>
+                <image-processing type="boolean">false</image-processing>
+                <image-updated-at type="datetime">2010-10-26T16:38:19-07:00</image-updated-at>
+                <position type="integer">1</position>
+              </spread>
+            </spreads>
 
 
-      
-      
+
+
 %h3 Create spread
 
 %h4 POST /album/\#{album.permalink}/spreads.json OR /album/\#{album.permalink}/spreads.xml
@@ -93,16 +95,16 @@
 %pre
   %code Status: 201 Created
 
-%br  
+%br
 
 %h3 Destroy spread
 
-%p 
+%p
   %b *** IMPORTANT: To replace an existing spread, rather than deleting, just create a spread with the same filename ***
 
-%h4 
-  DELETE /album/\#{album.permalink}/spreads/\#{spread.id}.json OR 
-  %br 
+%h4
+  DELETE /album/\#{album.permalink}/spreads/\#{spread.id}.json OR
+  %br
   \/album/\#{album.permalink}/spreads/\#{spread.id}.xml
 
 %h5 Response

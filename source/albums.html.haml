@@ -16,75 +16,76 @@
         :preserve
           [
             {
-              id: 123,
+              id: "1",
               sent_view_reminder_at: null,
-              client_email: &quot;client@example.com&quot;,
-              starts_on: &quot;left&quot;,
-              email: &quot;&quot;,
+              client_email: "client@example.com",
+              starts_on: "left",
+              email: "",
               notify_client_of_comments: false,
-              viewed_at: &quot;2011/12/06 20:11:13 +0000&quot;,
-              first_viewed_at: &quot;2012/03/13 18:47:34 +0000&quot;,
-              default: &quot;book&quot;,
+              viewed_at: "2011/12/06 20:11:13 +0000",
+              first_viewed_at: "2012/03/13 18:47:34 +0000",
+              default: "book",
               width: 1000,
-              permalink: &quot;client-album&quot;,
+              permalink: "client-album",
               allow_client_notifications: true,
-              name: &quot;Client Album&quot;,
+              name: "Client Album",
               embed: true,
               sent_approve_reminder_at: null,
               snapknot: false,
-              password: &quot;another&quot;,
+              password: "another",
               height: 393,
               archived: false,
-              approved_at: &quot;2010/07/13 17:40:44 +0100&quot;,
+              approved_at: "2010/07/13 17:40:44 +0100",
               sent_link_at: null,
               print_status: null,
-              created_on: &quot;2010/02/12&quot;,
+              created_on: "2010/02/12",
               song_id: null,
               shadow: false,
-              language: &quot;de_DE&quot;
+              language: "de_DE"
             }
             ...
           ]
   #index-xml
     %pre
       %code
-        :preserve
-          &lt;albums type=&quot;array&quot;&gt;
-            &lt;album&gt;
-              &lt;id&gt;123&lt;/id&gt;
-              &lt;allow-client-notifications type=&quot;boolean&quot;&gt;true&lt;/allow-client-notifications&gt;
-              &lt;approved-at type=&quot;datetime&quot;&gt;2010-07-13T17:40:44+01:00&lt;/approved-at&gt;
-              &lt;archived type=&quot;boolean&quot;&gt;false&lt;/archived&gt;
-              &lt;client-email&gt;client@example.com&lt;/client-email&gt;
-              &lt;created-on type=&quot;date&quot;&gt;2010-02-12&lt;/created-on&gt;
-              &lt;default&gt;book&lt;/default&gt;
-              &lt;email/&gt;
-              &lt;embed type=&quot;boolean&quot;&gt;true&lt;/embed&gt;
-              &lt;first-viewed-at type=&quot;datetime&quot;&gt;2012-03-13T18:47:34+00:00&lt;/first-viewed-at&gt;
-              &lt;height type=&quot;integer&quot;&gt;393&lt;/height&gt;
-              &lt;language&gt;de_DE&lt;/language&gt;
-              &lt;name&gt;Client Album&lt;/name&gt;
-              &lt;notify-client-of-comments type=&quot;boolean&quot;&gt;false&lt;/notify-client-of-comments&gt;
-              &lt;password&gt;another&lt;/password&gt;
-              &lt;permalink&gt;client-album&lt;/permalink&gt;
-              &lt;print-status nil=&quot;true&quot;/&gt;
-              &lt;sent-approve-reminder-at type=&quot;datetime&quot; nil=&quot;true&quot;/&gt;
-              &lt;sent-link-at type=&quot;datetime&quot; nil=&quot;true&quot;/&gt;
-              &lt;sent-view-reminder-at type=&quot;datetime&quot; nil=&quot;true&quot;/&gt;
-              &lt;shadow type=&quot;boolean&quot;&gt;false&lt;/shadow&gt;
-              &lt;snapknot type=&quot;boolean&quot;&gt;false&lt;/snapknot&gt;
-              &lt;song-id type=&quot;integer&quot; nil=&quot;true&quot;/&gt;
-              &lt;starts-on&gt;left&lt;/starts-on&gt;
-              &lt;viewed-at type=&quot;datetime&quot;&gt;2011-12-06T20:11:13+00:00&lt;/viewed-at&gt;
-              &lt;width type=&quot;integer&quot;&gt;1000&lt;/width&gt;
-            &lt;/album&gt;
-            ...
-          &lt;/albums&gt;
-      
+        = preserve do
+          :escaped
+            <albums type="array">
+              <album>
+                <id>1</id>
+                <allow-client-notifications type="boolean">true</allow-client-notifications>
+                <approved-at type="datetime">2010-07-13T17:40:44+01:00</approved-at>
+                <archived type="boolean">false</archived>
+                <client-email>client@example.com</client-email>
+                <created-on type="date">2010-02-12</created-on>
+                <default>book</default>
+                <email/>
+                <embed type="boolean">true</embed>
+                <first-viewed-at type="datetime">2012-03-13T18:47:34+00:00</first-viewed-at>
+                <height type="integer">393</height>
+                <language>de_DE</language>
+                <name>Client Album</name>
+                <notify-client-of-comments type="boolean">false</notify-client-of-comments>
+                <password>another</password>
+                <permalink>client-album</permalink>
+                <print-status nil="true"/>
+                <sent-approve-reminder-at type="datetime" nil="true"/>
+                <sent-link-at type="datetime" nil="true"/>
+                <sent-view-reminder-at type="datetime" nil="true"/>
+                <shadow type="boolean">false</shadow>
+                <snapknot type="boolean">false</snapknot>
+                <song-id type="integer" nil="true"/>
+                <starts-on>left</starts-on>
+                <viewed-at type="datetime">2011-12-06T20:11:13+00:00</viewed-at>
+                <width type="integer">1000</width>
+              </album>
+              ...
+            </albums>
+
 %h3 Create Album
 
-%h4 POST /album.json OR /album.xml
-  
+%h4 POST /albums.json OR /albums.xml
+
 .tabs
   %ul
     %li= link_to "JSON request", "#create-json"
@@ -95,25 +96,26 @@
       %code
         :preserve
           {
-            name: &quot;Client Album&quot;,
-            password: &quot;mypassword&quot;,
-            default: &quot;slideshow&quot;,
-            shadow: &quot;false&quot;,
-            song-id: &quot;176&quot;,
+            "name": "Client Album",
+            "password": "mypassword",
+            "default": "slideshow",
+            "shadow": "false",
+            "song-id": "176",
           }
   #create-xml
     %pre
       %code
-        :preserve
-          &lt;album&gt;
-            &lt;name&gt;new&lt;/name&gt;
-            &lt;password&gt;new&lt;/password&gt;
-            &lt;default&gt;book&lt;/default&gt;
-            &lt;shadow type=&quot;boolean&quot;&gt;true&lt;/shadow&gt;
-            &lt;song-id type=&quot;integer&quot;&gt;176&lt;/song-id&gt;
-          &lt;/album&gt;
+        = preserve do
+          :escaped
+            <album>
+              <name>new</name>
+              <password>new</password>
+              <default>book</default>
+              <shadow type="boolean">true</shadow>
+              <song-id type="integer">176</song-id>
+            </album>
 
-      
+
 %h5 Response
 %pre
   %code
@@ -123,7 +125,7 @@
 
 %h3 Update Album
 
-%h4 PUT /albums/\#{permalink}.json OR /albums/\#{permalink}.xml
+%h4 PUT /albums/1.json OR /albums/1.xml
 
 .tabs
   %ul
@@ -135,28 +137,28 @@
       %code
         :preserve
           {
-            name: &quot;Client Album&quot;,
-            password: &quot;mypassword&quot;,
-            default: &quot;slideshow&quot;,
-            shadow: &quot;false&quot;,
-            song-id: &quot;176&quot;,
+            name: "Client Album",
+            password: "mypassword",
+            default: "slideshow",
+            shadow: "false",
+            song-id: "176",
           }
 
   #update-xml
     %pre
       %code
-        :preserve
-          &lt;album&gt;
-            &lt;name&gt;new&lt;/name&gt;
-            &lt;password&gt;new&lt;/password&gt;
-            &lt;default&gt;book&lt;/default&gt;
-            &lt;shadow type=&quot;boolean&quot;&gt;true&lt;/shadow&gt;
-            &lt;song-id type=&quot;integer&quot;&gt;176&lt;/song-id&gt;
-          &lt;/album&gt;
+        = preserve do
+          :escaped
+            <album>
+              <name>new</name>
+              <password>new</password>
+              <default>book</default>
+              <shadow type="boolean">true</shadow>
+              <song-id type="integer">176</song-id>
+            </album>
 
 
 %h5 Response
 %pre
   %code
     Status: 200 OK
-
