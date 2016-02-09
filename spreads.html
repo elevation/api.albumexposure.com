@@ -61,7 +61,7 @@
         <h2>Spreads</h2>
         <p>* All spread operations apply to an album</p>
         <h3>List spreads</h3>
-        <h4>GET /album/#{album.permalink}/spreads.json OR /album/#{album.permalink}/spreads.xml</h4>
+        <h4>GET /albums/1/spreads.json OR /albums/1/spreads.xml</h4>
         <h5>Response</h5>
         <div class='tabs'>
           <ul>
@@ -70,7 +70,7 @@
             <li><a href="#index-dxml">Current Depricated XML response</a></li>
           </ul>
           <div id='index-json'>
-            <pre><code>[&#x000A;  {&#x000A;    id: "123"&#x000A;    image_updated_at: "2012/03/13 18:22:24 +0000",&#x000A;    image_urls: {&#x000A;      left: "http://assets.albumexposure.com/spreads/1/left/page_01.jpg?1331662944",&#x000A;      right: "http://assets.albumexposure.com/spreads/1/right/page_01.jpg?1331662944",&#x000A;      web: "http://assets.albumexposure.com/spreads/1/web/page_01.jpg?1331662944",&#x000A;      thumb: "http://assets.albumexposure.com/spreads/1/thumb/page_01.jpg?1331662944"&#x000A;    },&#x000A;    image_file_name: "page_01.jpg",&#x000A;    position: 1,&#x000A;    image_file_size: 80841,&#x000A;    image_processing: false&#x000A;  }&#x000A;]</code></pre>
+            <pre><code>[&#x000A;  {&#x000A;    "id": "1"&#x000A;    "position": 1,&#x000A;    "image_file_name": "page_01.jpg",&#x000A;    "image_file_size": 80841,&#x000A;    "image_updated_at": "2012/03/13 18:22:24 +0000",&#x000A;    "image_processing": false&#x000A;    "image_urls": {&#x000A;      "thumb": "https://d3ej44odz62oqc.cloudfront.net/spreads/1/thumb/L001.jpg?1351632940",&#x000A;      "web": "https://d3ej44odz62oqc.cloudfront.net/spreads/1/web/L001.jpg?1351632940",&#x000A;      "large": "https://d3ej44odz62oqc.cloudfront.net/spreads/1/large/L001.jpg?1351632940",&#x000A;      "fullscreen": "https://d3ej44odz62oqc.cloudfront.net/spreads/1/fullscreen/L001.jpg?1351632940"&#x000A;    }&#x000A;  }&#x000A;]</code></pre>
           </div>
           <div id='index-xml'>
             <pre><code>&lt;spreads type=&quot;array&quot;&gt;&#x000A;  &lt;spread&gt;&#x000A;    &lt;id type=&quot;integer&quot;&gt;123&lt;/id&gt;&#x000A;    &lt;image-file-name&gt;page_01.jpg&lt;/image-file-name&gt;&#x000A;    &lt;image-file-size type=&quot;integer&quot;&gt;80841&lt;/image-file-size&gt;&#x000A;    &lt;image-processing type=&quot;boolean&quot;&gt;false&lt;/image-processing&gt;&#x000A;    &lt;image-updated-at type=&quot;datetime&quot;&gt;2012-03-13T18:22:24+00:00&lt;/image-updated-at&gt;&#x000A;    &lt;position type=&quot;integer&quot;&gt;1&lt;/position&gt;&#x000A;    &lt;image-urls&gt;&#x000A;      &lt;left&gt;http://assets.albumexposure.com/spreads/1/left/page_01.jpg?1331662944&lt;/left&gt;&#x000A;      &lt;right&gt;http://assets.albumexposure.com/spreads/1/right/page_01.jpg?1331662944&lt;/right&gt;&#x000A;      &lt;web&gt;http://assets.albumexposure.com/spreads/1/web/page_01.jpg?1331662944&lt;/web&gt;&#x000A;      &lt;thumb&gt;http://assets.albumexposure.com/spreads/1/thumb/page_01.jpg?1331662944&lt;/thumb&gt;&#x000A;    &lt;/image-urls&gt;&#x000A;  &lt;/spread&gt;&#x000A;&lt;/spreads&gt;</code></pre>
@@ -80,10 +80,13 @@
           </div>
         </div>
         <h3>Create spread</h3>
-        <h4>POST /album/#{album.permalink}/spreads.json OR /album/#{album.permalink}/spreads.xml</h4>
+        <h4>POST /albums/1/spreads.json OR /albums/1/spreads.xml</h4>
         <h5>Request</h5>
-        <p>Temporarily we recommend that you submit a spread create request as a POST of name-value pairs:</p>
-        <pre><code>spread[image] = #{Filedata}</code></pre>
+        <p>We recommend you POST key/value pairs as form-data. (Similar to a URI query string.)</p>
+        <pre><code>Key:   spread[image]&#x000A;Value: #{Filedata}</code></pre>
+        <br>
+        <a href="/images/create_spread.png"><img width="650" src="/images/create_spread.png" /></a>
+        <br>
         <br>
         <h5>Response</h5>
         <pre><code>Status: 201 Created</code></pre>
@@ -93,9 +96,9 @@
           <b>*** IMPORTANT: To replace an existing spread, rather than deleting, just create a spread with the same filename ***</b>
         </p>
         <h4>
-          DELETE /album/#{album.permalink}/spreads/#{spread.id}.json OR
+          DELETE /albums/1/spreads/1.json OR
           <br>
-          /album/#{album.permalink}/spreads/#{spread.id}.xml
+          /albums/1/spreads/1.xml
         </h4>
         <h5>Response</h5>
         <pre><code>Status: 200 OK</code></pre>
