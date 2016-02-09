@@ -4,7 +4,7 @@
 
 %h3 List spreads
 
-%h4 GET /album/\#{album.permalink}/spreads.json OR /album/\#{album.permalink}/spreads.xml
+%h4 GET /albums/1/spreads.json OR /albums/1/spreads.xml
 
 %h5 Response
 
@@ -20,18 +20,18 @@
         :preserve
           [
             {
-              id: "123"
-              image_updated_at: "2012/03/13 18:22:24 +0000",
-              image_urls: {
-                left: "http://assets.albumexposure.com/spreads/1/left/page_01.jpg?1331662944",
-                right: "http://assets.albumexposure.com/spreads/1/right/page_01.jpg?1331662944",
-                web: "http://assets.albumexposure.com/spreads/1/web/page_01.jpg?1331662944",
-                thumb: "http://assets.albumexposure.com/spreads/1/thumb/page_01.jpg?1331662944"
-              },
-              image_file_name: "page_01.jpg",
-              position: 1,
-              image_file_size: 80841,
-              image_processing: false
+              "id": "1"
+              "position": 1,
+              "image_file_name": "page_01.jpg",
+              "image_file_size": 80841,
+              "image_updated_at": "2012/03/13 18:22:24 +0000",
+              "image_processing": false
+              "image_urls": {
+                "thumb": "https://d3ej44odz62oqc.cloudfront.net/spreads/1/thumb/L001.jpg?1351632940",
+                "web": "https://d3ej44odz62oqc.cloudfront.net/spreads/1/web/L001.jpg?1351632940",
+                "large": "https://d3ej44odz62oqc.cloudfront.net/spreads/1/large/L001.jpg?1351632940",
+                "fullscreen": "https://d3ej44odz62oqc.cloudfront.net/spreads/1/fullscreen/L001.jpg?1351632940"
+              }
             }
           ]
   #index-xml
@@ -78,16 +78,23 @@
 
 %h3 Create spread
 
-%h4 POST /album/\#{album.permalink}/spreads.json OR /album/\#{album.permalink}/spreads.xml
+%h4 POST /albums/1/spreads.json OR /albums/1/spreads.xml
 
 %h5 Request
 
-%p Temporarily we recommend that you submit a spread create request as a POST of name-value pairs:
+%p We recommend you POST key/value pairs as form-data. (Similar to a URI query string.)
 
 %pre
   %code
-    spread[image] = \#{Filedata}
+    = preserve do
+      Key:   spread[image]
+      Value: \#{Filedata}
 
+%br
+
+= link_to image_tag("create_spread.png", width: "650"), "/images/create_spread.png"
+
+%br
 %br
 
 %h5 Response
@@ -103,9 +110,9 @@
   %b *** IMPORTANT: To replace an existing spread, rather than deleting, just create a spread with the same filename ***
 
 %h4
-  DELETE /album/\#{album.permalink}/spreads/\#{spread.id}.json OR
+  DELETE /albums/1/spreads/1.json OR
   %br
-  \/album/\#{album.permalink}/spreads/\#{spread.id}.xml
+  \/albums/1/spreads/1.xml
 
 %h5 Response
 
