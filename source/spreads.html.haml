@@ -103,6 +103,26 @@
   %code Status: 201 Created
 
 %br
+%br
+
+%h3 Update spread
+
+%h4 PUT /albums/1/spreads/1.json OR /albums/1/spreads/1.xml
+
+%h5 Request
+
+%p Update the position of a spread by passing an integer between 1 and n, where n is the number of spreads in the list.
+
+%pre
+  %code
+    = preserve do
+      :escaped
+        {
+          "position": 1
+        }
+
+%br
+%br
 
 %h3 Destroy spread
 
