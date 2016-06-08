@@ -2,17 +2,15 @@
 
 %p * All spread operations apply to an album
 
-%h3 List spreads
+%h3 List all
 
-%h4 GET /albums/1/spreads.json OR /albums/1/spreads.xml
+%h4 GET /api/albums/1/spreads
 
 %h5 Response
 
 .tabs
   %ul
     %li= link_to "JSON response", "#index-json"
-    %li= link_to "Future XML Response", "#index-xml"
-    %li= link_to "Current Depricated XML response", "#index-dxml"
 
   #index-json
     %pre
@@ -34,51 +32,20 @@
               }
             }
           ]
-  #index-xml
-    %pre
-      %code
-        = preserve do
-          :escaped
-            <spreads type="array">
-              <spread>
-                <id type="integer">123</id>
-                <image-file-name>page_01.jpg</image-file-name>
-                <image-file-size type="integer">80841</image-file-size>
-                <image-processing type="boolean">false</image-processing>
-                <image-updated-at type="datetime">2012-03-13T18:22:24+00:00</image-updated-at>
-                <position type="integer">1</position>
-                <image-urls>
-                  <left>http://assets.albumexposure.com/spreads/1/left/page_01.jpg?1331662944</left>
-                  <right>http://assets.albumexposure.com/spreads/1/right/page_01.jpg?1331662944</right>
-                  <web>http://assets.albumexposure.com/spreads/1/web/page_01.jpg?1331662944</web>
-                  <thumb>http://assets.albumexposure.com/spreads/1/thumb/page_01.jpg?1331662944</thumb>
-                </image-urls>
-              </spread>
-            </spreads>
-  #index-dxml
-    %pre
-      %code
-        = preserve do
-          :escaped
-            <spreads type="array">
-              <spread>
-                <album-id type="integer">456</album-id>
-                <id type="integer">123</id>
-                <image-content-type>image/jpeg</image-content-type>
-                <image-file-name>page_01.jpg</image-file-name>
-                <image-file-size type="integer">80841</image-file-size>
-                <image-processing type="boolean">false</image-processing>
-                <image-updated-at type="datetime">2010-10-26T16:38:19-07:00</image-updated-at>
-                <position type="integer">1</position>
-              </spread>
-            </spreads>
 
+%h3 Fetch Spread
 
+%h4 GET /api/albums/1/spreads/1
 
+%h5 Response
 
-%h3 Create spread
+%pre
+  %code Status: 200 OK
+%br
 
-%h4 POST /albums/1/spreads.json OR /albums/1/spreads.xml
+%h3 Create Spread
+
+%h4 POST /api/albums/1/spreads
 
 %h5 Request
 
@@ -103,15 +70,14 @@
   %code Status: 201 Created
 
 %br
-%br
 
-%h3 Update spread
+%h3 Update Spread
 
-%h4 PUT /albums/1/spreads/1.json OR /albums/1/spreads/1.xml
+%h4 PUT /api/albums/1/spreads/1
 
 %h5 Request
 
-%p Update the position of a spread by passing an integer between 1 and n, where n is the number of spreads in the list.
+%p Update just the position of a spread by passing an integer between 1 and n, where n is the number of spreads in the list.
 
 %pre
   %code
@@ -122,17 +88,37 @@
         }
 
 %br
+
+%h5 Request
+%p
+  If updating the spread's image, then post key/value pairs as form-data, instead of JSON. (See Create Spread.) A
+  %i spread[position]
+  key can also be added to update the image and position in the same request.
+
+%pre
+  %code
+    = preserve do
+      :escaped
+        Key:   spread[image]
+        Value: \#{Filedata}
+        Key:   spread[position]
+        Value: 1
+
 %br
 
-%h3 Destroy spread
+%h5 Response
+
+%pre
+  %code Status: 200 OK
+%br
+
+%h3 Destroy Spread
 
 %p
-  %b *** IMPORTANT: To replace an existing spread, rather than deleting, just create a spread with the same filename ***
+  %b *** IMPORTANT: To replace an existing spread, rather than deleting, just create a spread with the same filename, or replace it's image. ***
 
 %h4
-  DELETE /albums/1/spreads/1.json OR
-  %br
-  \/albums/1/spreads/1.xml
+  DELETE /api/albums/1/spreads/1
 
 %h5 Response
 

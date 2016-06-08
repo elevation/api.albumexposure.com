@@ -4,14 +4,13 @@
 
 %p Lists all the songs that belong to this user
 
-%h4 GET /songs.json OR /songs.xml
+%h4 GET /api/songs
 
 %h5 Response
 
 .tabs
   %ul
     %li= link_to "JSON response", "#index-json"
-    %li= link_to "XML Response", "#index-xml"
 
   #index-json
     %pre
@@ -28,35 +27,18 @@
             }
             ...
           ]
-  #index-xml
-    %pre
-      %code
-        = preserve do
-          :escaped
-            <songs type="array">
-              <song>
-                <id>123</song>
-                <artist>Five Iron Frenzy</artist>
-                <song-file-name>06 Shut Up.mp3</song-file-name>
-                <song-file-size type="integer">192968</song-file`-size>
-                <title>Shut Up</title>
-                <url>http://assets.albumexposure.com/song/file/2317/06%20Shut%20Up.mp3</url>
-              </song>
-              ...
-            </songs>
 
 %h3 List free
 
 %p Lists all royalty-free songs available to the user
 
-%h4 GET /songs/free.json OR /songs/free.xml
+%h4 GET /api/songs/free
 
 %h5 Response
 
 .tabs
   %ul
     %li= link_to "JSON response", "#free-json"
-    %li= link_to "XML Response", "#free-xml"
 
   #free-json
     %pre
@@ -72,21 +54,5 @@
             }
             ...
           ]
-
-  #free-xml
-    %pre
-      %code
-        = preserve do
-          :escaped
-            <songs type="array">
-              <song>
-                <id>123</song>
-                <artist>Molly Jenson</artist>
-                <song-file-name>GiveItTime.mp3</song-file-name>
-                <title>Give It Time</title>
-                <url>http://assets.albumexpsure.com/song/file/9/GiveItTime.mp3</url>
-              </song>
-              ...
-            </songs>
 
 - # TODO: Create available but undocumented

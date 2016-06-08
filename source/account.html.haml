@@ -2,7 +2,7 @@
 
 %h3 SHOW
 
-%h4 GET /account.json OR /account.xml
+%h4 GET /api/account
 
 %p Returns information about the current account.
 
@@ -11,7 +11,6 @@
 .tabs
   %ul
     %li= link_to "JSON response", "#show-json"
-    %li= link_to "XML response",  "#show-xml"
 
   #show-json
     %pre
@@ -57,55 +56,16 @@
             url: null
           }
 
-  #show-xml
-    %pre
-      %code
-        = preserve do
-          :escaped
-            <user>
-              <first-name>Joe</first-name>
-              <last-name>User</last-name>
-              <login>joeuser</login>
-              <email>joe@example.com</email>
-              <second-email/>
-              <third-email/>
-              <company-name>Joe User Photography</company-name>
-              <address>123 AnyStreet</address>
-              <city>AnyCity</city>
-              <state>CA</state>
-              <zip>12345</zip>
-              <country>United States</country>
-              <bill-type>yearly</bill-type>
-              <card>XXXX-XXXX-XXXX-1111</card>
-              <card-exp type="datetime">2012-06-01T00:59:59+01:00</card-exp>
-              <card-type>visa</card-type>
-              <color>#FFFFFF</color>
-              <created-at type="datetime">2007-09-10T11:02:57+01:00</created-at>
-              <email-text>The first draft of your album is ready for your review and comment. To access this album please use the link and password below:{masked_url}Password: {password}You can review the album multiple times. If you aren&#x27;t quite ready to send your comments just save them for later. When you submit your comments my team will be notified and we&#x27;ll make the changes that you&#x27;ve requested.Let me know if you have any questions. Enjoy!</email-text>
-              <language/>
-              <logo-file-name nil="true"/>
-              <logo-position>left</logo-position>
-              <masked-url>yourelevation.com/albums</masked-url>
-              <newsletter type="boolean">true</newsletter>
-              <next-bill-date type="date">3000-01-01</next-bill-date>
-              <paypal-email>joeuser@example</paypal-email>
-              <presentation-term>pages</presentation-term>
-              <status>current</status>
-              <time-zone>Lisbon</time-zone>
-              <twitter-name nil="true"/>
-              <url nil="true"/>
-            </user>
-
-
 %h3 Create Account
 
-%h4 POST /account.json OR /account.xml
+%h4 POST /api/account
 
 %p Create an AlbumExposure account. Required fields are:
 
 %ul
   %li First name
   %li Last name
+  %li Company name
   %li Email
   %li Login
   %li Password
@@ -115,7 +75,6 @@
 .tabs
   %ul
     %li= link_to "JSON request", "#create-json"
-    %li= link_to "XML request",  "#create-xml"
 
   #create-json
     %pre
@@ -124,30 +83,14 @@
           {
             first_name: "Joe",
             last_name: "User",
+            company_name: "Joe User Photography",
             email: "joe@example.com",
             login: "joeuser",
             password: "mypassword",
             password_confirmation: "mypassword",
-            company_name: "Joe User Photography",
             terms: "true",
             newsletter: "true"
           }
-  #create-xml
-    %pre
-      %code
-        = preserve do
-          :escaped
-            <user>
-              <first-name>Joe</first-name>
-              <last-name>User</last-name>
-              <company-name>AlbumExposure</company-name>
-              <email>joe@example.com</email>
-              <twitter-name>@albumexposure</twitter-name>
-              <password>mypassword</password>
-              <password-confirmation>mypassword</password-confirmation>
-              <terms>true</term>
-              <newsletter>true</newsletter>
-            </user>
 
 %h5 Response
 %pre

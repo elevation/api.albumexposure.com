@@ -2,9 +2,9 @@
 
 %p * All comment operations apply to an album
 
-%p Deprecated: The comments requested as XML currently returns a deprecated representation of the comments which is a string representation of each spread separated by "-----"
+%h3 List all
 
-%h4 GET /albums/1/comments.json OR /albums/1/comments.xml
+%h4 GET /api/albums/1/comments
 
 %h5 Response
 
@@ -12,8 +12,6 @@
   %ul
     %li= link_to "JSON response", "#comments-json"
     %li= link_to "JSON Legacy response", "#comments-legacy-json"
-    %li= link_to "Future XML response", "#comments-xml"
-    %li= link_to "Deprecated XML response", "#comments-dxml"
 
   #comments-json
     %pre
@@ -74,48 +72,26 @@
             ...
           ]
 
-  #comments-xml
-    %pre
-      %code
-        = preserve do
-          :escaped
-            <comments type="array">
-              <comment>
-                <album-id type="integer">6562</album-id>
-                <created-at type="datetime">2011-03-03 17:11:36 -0800</created-at>
-                <id type="integer">41508</id>
-                <spread_comments>
-                  <spread_comment spread_id="1">first!</comment>
-                  <spread_comment spread_id="2">second!</comment>
-                </spread_comments>
-              </comment>
-              <comment>
-              ...
-              </comment>
-            </comments>
+%h3 List all unanswered
+%p
+  Lists all comments from the client which the photographer has not answered.
+  Also referred to the 'new' comments.
 
-  #comments-dxml
-    %pre
-      %code
-        = preserve do
-          :escaped
-            <comments type="array">
-              <comment>
-                <album-id type="integer">6562</album-id>
-                <created-at type="datetime">2011-03-03 17:11:36 -0800</created-at>
-                <id type="integer">41508</id>
-                <text>Spread 1:
-                first!
+%h4 GET /api/albums/1/comments/unanswered
 
-                ----
-                Spread 2:
-                second!
+%h5 Response
+%pre
+  %code
+    Status: 200 OK
+%br
 
-                ----
-                ...
-                </text>
-              </comment>
-              <comment>
-              ...
-              </comment>
-            </comments>
+%h3 List all comments from the designer
+%p (If the photographer is working with a DSE designer.)
+
+%h4 GET /api/albums/1/comments/designer
+
+%h5 Response
+%pre
+  %code
+    Status: 200 OK
+%br
