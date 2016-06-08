@@ -59,20 +59,21 @@
       <div id='body'>
         <h1>AlbumExposure API</h1>
         <h2>Introduction</h2>
-        <p>The AlbumExposure API is implemented as vanilla JSON/XML over HTTPS.  Send the Content-Type: application/json or application/xml header to identify the format along with the json or xml extension on the end of the request.</p>
+        <p>The AlbumExposure API is implemented as vanilla JSON over HTTPS.  Send the Content-Type: application/json header to identify the format along with the json extension on the end of the request.</p>
         <h3>Making requests</h3>
-        <p>When you're using the API, it's always through an existing AlbumExposure user. AlbumExposure uses HTTP Basic Authentication over HTTPS.</p>
+        <p>When you're using the API, it's always through an existing AlbumExposure user.</p>
         <p>
-          <b>Basic authentication will be depricated in the future in favor of OAUTH. Contact us for OAUTH credentials.</b>
+          <b>The preferred method of authentication is using OAuth. Contact us for credentials.</b>
         </p>
+        <p>Note: Basic authentication is also available, but may be deprecated in the future in favor of OAuth.</p>
         <p>Be sure to set both the 'Content-Type' and 'Accept' headers to the appropriate type to identify the request and response format. Example with json and Curl:</p>
         <pre><code>curl -H 'Accept: application/json' -H 'Content-Type: application/json' \
           -u username:password \
-        https://albumexposure.com/albums.json</code></pre>
+        https://albumexposure.com/api/albums</code></pre>
         <br>
         <h3>Responses</h3>
-        <p>If a request succeeds, it will return a status code in the 200 range and often, an JSON or XML formatted response. Note that, in general, if a request causes a new record to be created (like a new album, or spread, etc.), the response will use the "201 Created" status. Any other successful operation (like a successful query, delete, or update) will return a 200 status code.</p>
-        <p>If a request fails, a non-200 status code will be returned, possibly with error information in JSON or XML format as the response's content. For instance, if a requested record could not be found, the HTTP response might look something like:</p>
+        <p>If a request succeeds, it will return a status code in the 200 range and often, a JSON formatted response. Note that, in general, if a request causes a new record to be created (like a new album, or spread, etc.), the response will use the "201 Created" status. Any other successful operation (like a successful query, delete, or update) will return a 200 status code.</p>
+        <p>If a request fails, a non-200 status code will be returned, possibly with error information in JSON format as the response's content. For instance, if a requested record could not be found, the HTTP response might look something like:</p>
         <pre><code>HTTP/1.1 404 The record could not be found
         Date: Thu, 16 Mar 2006 17:41:40 GMT
         ...</code></pre>

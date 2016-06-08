@@ -60,15 +60,13 @@
         <h1>AlbumExposure API</h1>
         <h2>Comments</h2>
         <p>* All comment operations apply to an album</p>
-        <p>Deprecated: The comments requested as XML currently returns a deprecated representation of the comments which is a string representation of each spread separated by "-----"</p>
-        <h4>GET /albums/1/comments.json OR /albums/1/comments.xml</h4>
+        <h3>List all</h3>
+        <h4>GET /api/albums/1/comments</h4>
         <h5>Response</h5>
         <div class='tabs'>
           <ul>
             <li><a href="#comments-json">JSON response</a></li>
             <li><a href="#comments-legacy-json">JSON Legacy response</a></li>
-            <li><a href="#comments-xml">Future XML response</a></li>
-            <li><a href="#comments-dxml">Deprecated XML response</a></li>
           </ul>
           <div id='comments-json'>
             <pre><code>[&#x000A;  {&#x000A;    "album_id": "1",&#x000A;    "created_at": "2011-03-03 17:11:36 -0800",&#x000A;    "comments":&#x000A;    {&#x000A;      "741798": [&#x000A;        {&#x000A;          "text": "first!"&#x000A;        }&#x000A;      ],&#x000A;      "741800": [&#x000A;        {&#x000A;          "text": "second!",&#x000A;          "position": [&#x000A;            0.3918918918918919,&#x000A;            0.4201474201474201&#x000A;          ]&#x000A;        },&#x000A;        {&#x000A;          "text": "third"&#x000A;        }&#x000A;      ],&#x000A;      "741797": [&#x000A;        {&#x000A;          "text": "fourth",&#x000A;          "position": [&#x000A;            0.18427518427518427,&#x000A;            0.3316953316953317&#x000A;          ]&#x000A;        }&#x000A;      ]&#x000A;    }&#x000A;  }&#x000A;  ...&#x000A;]&#x000A;</code></pre>
@@ -76,13 +74,22 @@
           <div id='comments-legacy-json'>
             <pre><code>[&#x000A;  {&#x000A;    "album_id": "1",&#x000A;    "created_at": "2011-03-03 17:11:36 -0800",&#x000A;    "comments":&#x000A;    {&#x000A;      "741798":"first!",&#x000A;      741800":"second!",&#x000A;      "741797":"third!"&#x000A;    }&#x000A;  }&#x000A;  ...&#x000A;]&#x000A;</code></pre>
           </div>
-          <div id='comments-xml'>
-            <pre><code>&lt;comments type=&quot;array&quot;&gt;&#x000A;  &lt;comment&gt;&#x000A;    &lt;album-id type=&quot;integer&quot;&gt;6562&lt;/album-id&gt;&#x000A;    &lt;created-at type=&quot;datetime&quot;&gt;2011-03-03 17:11:36 -0800&lt;/created-at&gt;&#x000A;    &lt;id type=&quot;integer&quot;&gt;41508&lt;/id&gt;&#x000A;    &lt;spread_comments&gt;&#x000A;      &lt;spread_comment spread_id=&quot;1&quot;&gt;first!&lt;/comment&gt;&#x000A;      &lt;spread_comment spread_id=&quot;2&quot;&gt;second!&lt;/comment&gt;&#x000A;    &lt;/spread_comments&gt;&#x000A;  &lt;/comment&gt;&#x000A;  &lt;comment&gt;&#x000A;  ...&#x000A;  &lt;/comment&gt;&#x000A;&lt;/comments&gt;</code></pre>
-          </div>
-          <div id='comments-dxml'>
-            <pre><code>&lt;comments type=&quot;array&quot;&gt;&#x000A;  &lt;comment&gt;&#x000A;    &lt;album-id type=&quot;integer&quot;&gt;6562&lt;/album-id&gt;&#x000A;    &lt;created-at type=&quot;datetime&quot;&gt;2011-03-03 17:11:36 -0800&lt;/created-at&gt;&#x000A;    &lt;id type=&quot;integer&quot;&gt;41508&lt;/id&gt;&#x000A;    &lt;text&gt;Spread 1:&#x000A;    first!&#x000A;&#x000A;    ----&#x000A;    Spread 2:&#x000A;    second!&#x000A;&#x000A;    ----&#x000A;    ...&#x000A;    &lt;/text&gt;&#x000A;  &lt;/comment&gt;&#x000A;  &lt;comment&gt;&#x000A;  ...&#x000A;  &lt;/comment&gt;&#x000A;&lt;/comments&gt;</code></pre>
-          </div>
         </div>
+        <h3>List all unanswered</h3>
+        <p>
+          Lists all comments from the client which the photographer has not answered.
+          Also referred to the 'new' comments.
+        </p>
+        <h4>GET /api/albums/1/comments/unanswered</h4>
+        <h5>Response</h5>
+        <pre><code>Status: 200 OK</code></pre>
+        <br>
+        <h3>List all comments from the designer</h3>
+        <p>(If the photographer is working with a DSE designer.)</p>
+        <h4>GET /api/albums/1/comments/designer</h4>
+        <h5>Response</h5>
+        <pre><code>Status: 200 OK</code></pre>
+        <br>
       </div>
       <div class='clear'></div>
     </div>
