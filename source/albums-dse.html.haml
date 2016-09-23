@@ -1,0 +1,184 @@
+%h2 Albums with Design Studio Edition
+
+%p Options specific to the Design Studio Edition of AlbumExposure.
+
+%p
+  For the most part, these are the same as the regular
+  = link_to 'Albums', '/albums.html'
+  endpoints, but with a few additional options. Only the relevant options are
+  shown here, otherwise see the
+  = link_to 'Albums', '/albums.html'
+  page.
+
+%p
+  These options are similar to what's shown when setting up an Album in the
+  AE user interface, under the 'Client Access' section.
+
+%h3 Endpoints:
+
+%ul
+  %li
+    = link_to 'Create an album', '#create-photog'
+    \- Client is an AE photographer
+  %li
+    = link_to 'Create an album', '#invite-photog'
+    \- Invite a photographer to AE
+  %li
+    = link_to 'Create an album', '#create-client'
+    \- Client is NOT a photographer
+  %li= link_to 'Get an album', '#get-an-album'
+
+%br
+
+%h3#create-photog Create an album - Client is an AE photographer
+
+%h4 POST /api/albums
+
+%p Requires knowing the photographer's AE username (client_login).
+
+%p Set 'to_client' to false. This indicates the album is for a photographer.
+
+%p No password is needed.
+
+.tabs
+  %ul
+    %li= link_to "JSON request", "#create-json"
+
+  #create-json
+    %pre
+      %code
+        :preserve
+          {
+            "name": "Photographer Album",
+            "to_client": false,
+            "client_login": "joeuser"
+          }
+
+%h5 Response
+%pre
+  %code
+    Status: 201 Created
+
+%br
+%br
+
+%h3#invite-photog Create an album - Invite a photographer to AE
+
+%h4 POST /api/albums
+
+%p
+  If you don't know the photographer's AE username, or they aren't already an
+  AlbumExposure user, you can invite them by email instead.
+
+%p No password is needed.
+
+.tabs
+  %ul
+    %li= link_to "JSON request", "#create-json"
+
+  #create-json
+    %pre
+      %code
+        :preserve
+          {
+            "name": "Photographer Album",
+            "to_client": false,
+            "invite_email": "photographer@example.com"
+          }
+
+%h5 Response
+%pre
+  %code
+    Status: 201 Created
+
+%br
+%br
+
+%h3#create-client Create an album - Client is NOT a photographer
+
+%h4 POST /api/albums
+
+%p
+  For design studios working directly with clients.
+
+%p
+  Set 'to_client' to true, and pass in the client name, email, and album password.
+
+.tabs
+  %ul
+    %li= link_to "JSON request", "#create-json"
+
+  #create-json
+    %pre
+      %code
+        :preserve
+          {
+            "name": "Client Album",
+            "password": "mypassword",
+            "to_client": true,
+            "client_first_name": "Joe",
+            "client_last_name": "Client",
+            "client_email": "client@example.com"
+          }
+
+%h5 Response
+%pre
+  %code
+    Status: 201 Created
+
+%br
+%br
+
+%h3#get-an-album Get an album
+
+%h4 GET /api/album/1
+
+%p
+  This is very similar to the normal album fetch response, with 3 different
+  variations, depending on the album's client access.
+%p
+  `client_login` can be used to determine if a registered AE photographer has
+  been successfully set on the album.
+
+%ul
+  %li If set, it will show their AE username under client_login
+%p
+  If an AE photographer is not set on the album, then it will show either:
+%ul
+  %li the invite email sent to the photographer
+  %li or the client info set on the album (if the client is NOT a photographer)
+
+.tabs
+  %ul
+    %li= link_to "3 possible JSON response variations", "#index-json"
+  #index-json
+    %pre
+      %code
+        :preserve
+          {
+            "client_login": "joeuser"
+          }
+    %br
+    %pre
+      %code
+        :preserve
+          {
+            "client_login": null,
+            "invite_email": "photographer@example.com"
+          }
+    %br
+    %pre
+      %code
+        :preserve
+          {
+            "client_login": null,
+            "client_first_name": "Joe",
+            "client_last_name": "Client"
+          }
+
+%h5 Response
+%pre
+  %code
+    Status: 200 OK
+
+%br

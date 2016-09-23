@@ -2,7 +2,9 @@
 
 %p * All comment operations apply to an album
 
-%h3 List all
+%br
+
+%h3 Get comments
 
 %h4 GET /api/albums/1/comments
 
@@ -72,7 +74,9 @@
             ...
           ]
 
-%h3 List all unanswered
+%br
+
+%h3 Get unanswered comments
 %p
   Lists all comments from the client which the photographer has not answered.
   Also referred to the 'new' comments.
@@ -83,10 +87,12 @@
 %pre
   %code
     Status: 200 OK
+
+%br
 %br
 
-%h3 List all comments from the designer
-%p (If the photographer is working with a DSE designer.)
+%h3 Get comments from the designer
+%p (If the photographer is working with a Desing Studio Edition designer.)
 
 %h4 GET /api/albums/1/comments/designer
 
@@ -94,4 +100,5 @@
 %pre
   %code
     Status: 200 OK
+
 %br

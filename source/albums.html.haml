@@ -1,6 +1,19 @@
 %h2 Albums
 
-%h3 List all
+%br
+
+%h3 Endpoints:
+
+%ul
+  %li= link_to 'Get albums', '#get-albums'
+  %li= link_to 'Get an album', '#get-an-album'
+  %li= link_to 'Create an album', '#create-an-album'
+  %li= link_to 'Update an album', '#update-an-album'
+  %li= link_to 'Send an album link', '#send-an-album-link'
+
+%br
+
+%h3#get-albums Get albums
 
 %h4 GET /api/albums
 
@@ -15,37 +28,37 @@
         :preserve
           [
             {
-              id: "1",
-              sent_view_reminder_at: null,
-              client_email: "client@example.com",
-              starts_on: "left",
-              email: "",
-              notify_client_of_comments: false,
-              viewed_at: "2011/12/06 20:11:13 +0000",
-              first_viewed_at: "2012/03/13 18:47:34 +0000",
-              default: "book",
-              width: 1000,
-              permalink: "client-album",
-              allow_client_notifications: true,
-              name: "Client Album",
-              embed: true,
-              sent_approve_reminder_at: null,
-              snapknot: false,
-              password: "another",
-              height: 393,
-              archived: false,
-              approved_at: "2010/07/13 17:40:44 +0100",
-              sent_link_at: null,
-              print_status: null,
-              created_on: "2010/02/12",
-              song_id: null,
-              shadow: false,
-              language: "de_DE"
+              "id": "1",
+              "sent_view_reminder_at": null,
+              "client_email": "client@example.com",
+              "starts_on": "left",
+              "email": "",
+              "notify_client_of_comments": false,
+              "viewed_at": "2011/12/06 20:11:13 +0000",
+              "first_viewed_at": "2012/03/13 18:47:34 +0000",
+              "default": "book",
+              "width": 1000,
+              "permalink": "client-album",
+              "allow_client_notifications": true,
+              "name": "Client Album",
+              "embed": true,
+              "sent_approve_reminder_at": null,
+              "snapknot": false,
+              "password": "another",
+              "height": 393,
+              "archived": false,
+              "approved_at": "2010/07/13 17:40:44 +0100",
+              "sent_link_at": null,
+              "print_status": null,
+              "created_on": "2010/02/12",
+              "song_id": null,
+              "shadow": false,
+              "language": "de_DE"
             }
             ...
           ]
 
-%h3 Fetch Album
+%h3#get-an-album Get an album
 
 %h4 GET /api/album/1
 
@@ -55,8 +68,9 @@
     Status: 200 OK
 
 %br
+%br
 
-%h3 Create Album
+%h3#create-an-album Create an album
 
 %h4 POST /api/albums
 
@@ -73,7 +87,7 @@
             "password": "mypassword",
             "default": "slideshow",
             "shadow": "false",
-            "song-id": "176",
+            "song-id": "176"
           }
 
 %h5 Response
@@ -82,8 +96,9 @@
     Status: 201 Created
 
 %br
+%br
 
-%h3 Update Album
+%h3#update-an-album Update an album
 
 %h4 PATCH /albums/1
 
@@ -96,14 +111,44 @@
       %code
         :preserve
           {
-            name: "Client Album",
-            password: "mypassword",
-            default: "slideshow",
-            shadow: "false",
-            song-id: "176",
+            "name": "Client Album",
+            "password": "mypassword",
+            "default": "slideshow",
+            "shadow": "false",
+            "song-id": "176"
           }
 
 %h5 Response
 %pre
   %code
     Status: 200 OK
+
+%br
+%br
+
+%h3#send-an-album-link Send an album link
+
+%h4 POST /albums/1/email
+
+%p Emails the album link to the recipient.
+
+%p
+  The 'to' param is only required when there isn't already an email
+  attached to the album.
+
+.tabs
+  %ul
+    %li= link_to "JSON request", "#update-json"
+
+  #update-json
+    %pre
+      %code
+        :preserve
+          {
+            "to": "client@example.com"
+          }
+
+%h5 Response
+%pre
+  %code
+    Status: 204 No Content

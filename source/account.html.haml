@@ -1,6 +1,8 @@
 %h2 Account
 
-%h3 SHOW
+%br
+
+%h3 Get an account
 
 %h4 GET /api/account
 
@@ -18,45 +20,47 @@
         :preserve
           {
             "first_name": "Joe",
-            last_name: "Moody",
-            login: "joeuser",
-            email: "joe@example.com",
-            second_email: "",
-            third_email: "",
-            company_name: "Joe User Photography",
-            address: "123 AnyStreet",
-            city: "AnyCity",
-            state: "CA",
-            zip: "12345",
-            country: "United States"
-            bill_type: "yearly",
-            card: "XXXX-XXXX-XXXX-1111",
-            card_exp: "2012/06/01 00:59:59 +0100",
-            card_type: "visa",
-            color: "#FFFFFF",
-            created_at: "2007/09/10 11:02:57 +0100",
-            email_text: "The first draft of your album is ready for your review and comment. To access this album please use the link and password below:
+            "last_name": "User",
+            "login": "joeuser",
+            "email": "joe@example.com",
+            "second_email": "",
+            "third_email": "",
+            "company_name": "Joe User Photography",
+            "address": "123 AnyStreet",
+            "city": "AnyCity",
+            "state": "CA",
+            "zip": "12345",
+            "country": "United States"
+            "bill_type": "yearly",
+            "card": "XXXX-XXXX-XXXX-1111",
+            "card_exp": "2012/06/01 00:59:59 +0100",
+            ""card_type"": "visa",
+            "color": "#FFFFFF",
+            "created_at": "2007/09/10 11:02:57 +0100",
+            "email_text": "The first draft of your album is ready for your review and comment. To access this album please use the link and password below:
             {masked_url}
             Password: {password}
 
             You can review the album multiple times. If you aren&#x27;t quite ready to send your comments just save them for later. When you submit your comments my team will be notified and we&#x27;ll make the changes that you&#x27;ve requested.
 
             Let me know if you have any questions. Enjoy!",
-            language: "",
-            logo_file_name: null,
-            logo_position: "left",
-            masked_url: "yourelevation.com/albums",
-            newsletter: true,
-            next_bill_date: "3000/01/01",
-            paypal_email: "joe@example.com",
-            presentation_term: "pages",
-            status: "current",
-            time_zone: "Lisbon",
-            twitter_name: null,
-            url: null
+            "language": "",
+            "logo_file_name": null,
+            "logo_position": "left",
+            "masked_url": "yourelevation.com/albums",
+            "newsletter": true,
+            "next_bill_date": "3000/01/01",
+            "paypal_email": "joe@example.com",
+            "presentation_term": "pages",
+            "status": "current",
+            "time_zone": "Lisbon",
+            "twitter_name": null,
+            "url": null
           }
 
-%h3 Create Account
+%br
+
+%h3 Create an account
 
 %h4 POST /api/account
 
@@ -81,15 +85,15 @@
       %code
         :preserve
           {
-            first_name: "Joe",
-            last_name: "User",
-            company_name: "Joe User Photography",
-            email: "joe@example.com",
-            login: "joeuser",
-            password: "mypassword",
-            password_confirmation: "mypassword",
-            terms: "true",
-            newsletter: "true"
+            "first_name": "Joe",
+            "last_name": "User",
+            "company_name": "Joe User Photography",
+            "email": "joe@example.com",
+            "login": "joeuser",
+            "password": "mypassword",
+            "password_confirmation": "mypassword",
+            "terms": "true",
+            "newsletter": "true"
           }
 
 %h5 Response

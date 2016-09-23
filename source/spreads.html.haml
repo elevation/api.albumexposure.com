@@ -2,7 +2,9 @@
 
 %p * All spread operations apply to an album
 
-%h3 List all
+%br
+
+%h3 Get spreads
 
 %h4 GET /api/albums/1/spreads
 
@@ -33,7 +35,7 @@
             }
           ]
 
-%h3 Fetch Spread
+%h3 Get a spread
 
 %h4 GET /api/albums/1/spreads/1
 
@@ -41,9 +43,11 @@
 
 %pre
   %code Status: 200 OK
+
+%br
 %br
 
-%h3 Create Spread
+%h3 Create a spread
 
 %h4 POST /api/albums/1/spreads
 
@@ -58,6 +62,7 @@
       Value: \#{Filedata}
 
 %br
+%br
 
 = link_to image_tag("create_spread.png", width: "650"), "/images/create_spread.png"
 
@@ -70,8 +75,9 @@
   %code Status: 201 Created
 
 %br
+%br
 
-%h3 Update Spread
+%h3 Update a spread
 
 %h4 PUT /api/albums/1/spreads/1
 
@@ -110,12 +116,14 @@
 
 %pre
   %code Status: 200 OK
+
+%br
 %br
 
-%h3 Destroy Spread
+%h3 Delete a spread
 
 %p
-  %b *** IMPORTANT: To replace an existing spread, rather than deleting, just create a spread with the same filename, or replace it's image. ***
+  *** IMPORTANT ***: To replace an existing spread, rather than deleting, just create a spread with the same filename, or replace it's image.
 
 %h4
   DELETE /api/albums/1/spreads/1
