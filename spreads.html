@@ -25,6 +25,7 @@
             <li><a href="/">Introduction</a></li>
             <li><a href="/account.html">Account</a></li>
             <li><a href="/albums.html">Albums</a></li>
+            <li><a href="/albums-dse.html">Albums (DSE)</a></li>
             <li><a href="/comments.html">Comments</a></li>
             <li><a href="/spreads.html">Spreads</a></li>
             <li><a href="/songs.html">Songs</a></li>
@@ -60,7 +61,8 @@
         <h1>AlbumExposure API</h1>
         <h2>Spreads</h2>
         <p>* All spread operations apply to an album</p>
-        <h3>List all</h3>
+        <br>
+        <h3>Get spreads</h3>
         <h4>GET /api/albums/1/spreads</h4>
         <h5>Response</h5>
         <div class='tabs'>
@@ -71,16 +73,18 @@
             <pre><code>[&#x000A;  {&#x000A;    "id": "1"&#x000A;    "position": 1,&#x000A;    "image_file_name": "page_01.jpg",&#x000A;    "image_file_size": 80841,&#x000A;    "image_updated_at": "2012/03/13 18:22:24 +0000",&#x000A;    "image_processing": false&#x000A;    "image_urls": {&#x000A;      "thumb": "https://d3ej44odz62oqc.cloudfront.net/spreads/1/thumb/L001.jpg?1351632940",&#x000A;      "web": "https://d3ej44odz62oqc.cloudfront.net/spreads/1/web/L001.jpg?1351632940",&#x000A;      "large": "https://d3ej44odz62oqc.cloudfront.net/spreads/1/large/L001.jpg?1351632940",&#x000A;      "fullscreen": "https://d3ej44odz62oqc.cloudfront.net/spreads/1/fullscreen/L001.jpg?1351632940"&#x000A;    }&#x000A;  }&#x000A;]&#x000A;</code></pre>
           </div>
         </div>
-        <h3>Fetch Spread</h3>
+        <h3>Get a spread</h3>
         <h4>GET /api/albums/1/spreads/1</h4>
         <h5>Response</h5>
         <pre><code>Status: 200 OK</code></pre>
         <br>
-        <h3>Create Spread</h3>
+        <br>
+        <h3>Create a spread</h3>
         <h4>POST /api/albums/1/spreads</h4>
         <h5>Request</h5>
         <p>We recommend you POST key/value pairs as form-data. (Similar to a URI query string.)</p>
         <pre><code>Key:   spread[image]&#x000A;Value: #{Filedata}</code></pre>
+        <br>
         <br>
         <a href="/images/create_spread.png"><img width="650" src="/images/create_spread.png" /></a>
         <br>
@@ -88,7 +92,8 @@
         <h5>Response</h5>
         <pre><code>Status: 201 Created</code></pre>
         <br>
-        <h3>Update Spread</h3>
+        <br>
+        <h3>Update a spread</h3>
         <h4>PUT /api/albums/1/spreads/1</h4>
         <h5>Request</h5>
         <p>Update just the position of a spread by passing an integer between 1 and n, where n is the number of spreads in the list.</p>
@@ -105,9 +110,10 @@
         <h5>Response</h5>
         <pre><code>Status: 200 OK</code></pre>
         <br>
-        <h3>Destroy Spread</h3>
+        <br>
+        <h3>Delete a spread</h3>
         <p>
-          <b>*** IMPORTANT: To replace an existing spread, rather than deleting, just create a spread with the same filename, or replace it's image. ***</b>
+          *** IMPORTANT ***: To replace an existing spread, rather than deleting, just create a spread with the same filename, or replace it's image.
         </p>
         <h4>
           DELETE /api/albums/1/spreads/1

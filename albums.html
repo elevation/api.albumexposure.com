@@ -25,6 +25,7 @@
             <li><a href="/">Introduction</a></li>
             <li><a href="/account.html">Account</a></li>
             <li><a href="/albums.html">Albums</a></li>
+            <li><a href="/albums-dse.html">Albums (DSE)</a></li>
             <li><a href="/comments.html">Comments</a></li>
             <li><a href="/spreads.html">Spreads</a></li>
             <li><a href="/songs.html">Songs</a></li>
@@ -59,7 +60,17 @@
       <div id='body'>
         <h1>AlbumExposure API</h1>
         <h2>Albums</h2>
-        <h3>List all</h3>
+        <br>
+        <h3>Endpoints:</h3>
+        <ul>
+          <li><a href="#get-albums">Get albums</a></li>
+          <li><a href="#get-an-album">Get an album</a></li>
+          <li><a href="#create-an-album">Create an album</a></li>
+          <li><a href="#update-an-album">Update an album</a></li>
+          <li><a href="#send-an-album-link">Send an album link</a></li>
+        </ul>
+        <br>
+        <h3 id='get-albums'>Get albums</h3>
         <h4>GET /api/albums</h4>
         <p>Lists the albums in your account</p>
         <div class='tabs'>
@@ -67,39 +78,60 @@
             <li><a href="#index-json">JSON response</a></li>
           </ul>
           <div id='index-json'>
-            <pre><code>[&#x000A;  {&#x000A;    id: "1",&#x000A;    sent_view_reminder_at: null,&#x000A;    client_email: "client@example.com",&#x000A;    starts_on: "left",&#x000A;    email: "",&#x000A;    notify_client_of_comments: false,&#x000A;    viewed_at: "2011/12/06 20:11:13 +0000",&#x000A;    first_viewed_at: "2012/03/13 18:47:34 +0000",&#x000A;    default: "book",&#x000A;    width: 1000,&#x000A;    permalink: "client-album",&#x000A;    allow_client_notifications: true,&#x000A;    name: "Client Album",&#x000A;    embed: true,&#x000A;    sent_approve_reminder_at: null,&#x000A;    snapknot: false,&#x000A;    password: "another",&#x000A;    height: 393,&#x000A;    archived: false,&#x000A;    approved_at: "2010/07/13 17:40:44 +0100",&#x000A;    sent_link_at: null,&#x000A;    print_status: null,&#x000A;    created_on: "2010/02/12",&#x000A;    song_id: null,&#x000A;    shadow: false,&#x000A;    language: "de_DE"&#x000A;  }&#x000A;  ...&#x000A;]&#x000A;</code></pre>
+            <pre><code>[&#x000A;  {&#x000A;    "id": "1",&#x000A;    "sent_view_reminder_at": null,&#x000A;    "client_email": "client@example.com",&#x000A;    "starts_on": "left",&#x000A;    "email": "",&#x000A;    "notify_client_of_comments": false,&#x000A;    "viewed_at": "2011/12/06 20:11:13 +0000",&#x000A;    "first_viewed_at": "2012/03/13 18:47:34 +0000",&#x000A;    "default": "book",&#x000A;    "width": 1000,&#x000A;    "permalink": "client-album",&#x000A;    "allow_client_notifications": true,&#x000A;    "name": "Client Album",&#x000A;    "embed": true,&#x000A;    "sent_approve_reminder_at": null,&#x000A;    "snapknot": false,&#x000A;    "password": "another",&#x000A;    "height": 393,&#x000A;    "archived": false,&#x000A;    "approved_at": "2010/07/13 17:40:44 +0100",&#x000A;    "sent_link_at": null,&#x000A;    "print_status": null,&#x000A;    "created_on": "2010/02/12",&#x000A;    "song_id": null,&#x000A;    "shadow": false,&#x000A;    "language": "de_DE"&#x000A;  }&#x000A;  ...&#x000A;]&#x000A;</code></pre>
           </div>
         </div>
-        <h3>Fetch Album</h3>
+        <h3 id='get-an-album'>Get an album</h3>
         <h4>GET /api/album/1</h4>
         <h5>Response</h5>
         <pre><code>Status: 200 OK</code></pre>
         <br>
-        <h3>Create Album</h3>
+        <br>
+        <h3 id='create-an-album'>Create an album</h3>
         <h4>POST /api/albums</h4>
         <div class='tabs'>
           <ul>
             <li><a href="#create-json">JSON request</a></li>
           </ul>
           <div id='create-json'>
-            <pre><code>{&#x000A;  "name": "Client Album",&#x000A;  "password": "mypassword",&#x000A;  "default": "slideshow",&#x000A;  "shadow": "false",&#x000A;  "song-id": "176",&#x000A;}&#x000A;</code></pre>
+            <pre><code>{&#x000A;  "name": "Client Album",&#x000A;  "password": "mypassword",&#x000A;  "default": "slideshow",&#x000A;  "shadow": "false",&#x000A;  "song-id": "176"&#x000A;}&#x000A;</code></pre>
           </div>
         </div>
         <h5>Response</h5>
         <pre><code>Status: 201 Created</code></pre>
         <br>
-        <h3>Update Album</h3>
+        <br>
+        <h3 id='update-an-album'>Update an album</h3>
         <h4>PATCH /albums/1</h4>
         <div class='tabs'>
           <ul>
             <li><a href="#update-json">JSON request</a></li>
           </ul>
           <div id='update-json'>
-            <pre><code>{&#x000A;  name: "Client Album",&#x000A;  password: "mypassword",&#x000A;  default: "slideshow",&#x000A;  shadow: "false",&#x000A;  song-id: "176",&#x000A;}&#x000A;</code></pre>
+            <pre><code>{&#x000A;  "name": "Client Album",&#x000A;  "password": "mypassword",&#x000A;  "default": "slideshow",&#x000A;  "shadow": "false",&#x000A;  "song-id": "176"&#x000A;}&#x000A;</code></pre>
           </div>
         </div>
         <h5>Response</h5>
         <pre><code>Status: 200 OK</code></pre>
+        <br>
+        <br>
+        <h3 id='send-an-album-link'>Send an album link</h3>
+        <h4>POST /albums/1/email</h4>
+        <p>Emails the album link to the recipient.</p>
+        <p>
+          The 'to' param is only required when there isn't already an email
+          attached to the album.
+        </p>
+        <div class='tabs'>
+          <ul>
+            <li><a href="#update-json">JSON request</a></li>
+          </ul>
+          <div id='update-json'>
+            <pre><code>{&#x000A;  "to": "client@example.com"&#x000A;}&#x000A;</code></pre>
+          </div>
+        </div>
+        <h5>Response</h5>
+        <pre><code>Status: 204 No Content</code></pre>
       </div>
       <div class='clear'></div>
     </div>

@@ -25,6 +25,7 @@
             <li><a href="/">Introduction</a></li>
             <li><a href="/account.html">Account</a></li>
             <li><a href="/albums.html">Albums</a></li>
+            <li><a href="/albums-dse.html">Albums (DSE)</a></li>
             <li><a href="/comments.html">Comments</a></li>
             <li><a href="/spreads.html">Spreads</a></li>
             <li><a href="/songs.html">Songs</a></li>
@@ -59,7 +60,8 @@
       <div id='body'>
         <h1>AlbumExposure API</h1>
         <h2>Account</h2>
-        <h3>SHOW</h3>
+        <br>
+        <h3>Get an account</h3>
         <h4>GET /api/account</h4>
         <p>Returns information about the current account.</p>
         <h5>Response</h5>
@@ -68,10 +70,11 @@
             <li><a href="#show-json">JSON response</a></li>
           </ul>
           <div id='show-json'>
-            <pre><code>{&#x000A;  "first_name": "Joe",&#x000A;  last_name: "Moody",&#x000A;  login: "joeuser",&#x000A;  email: "joe@example.com",&#x000A;  second_email: "",&#x000A;  third_email: "",&#x000A;  company_name: "Joe User Photography",&#x000A;  address: "123 AnyStreet",&#x000A;  city: "AnyCity",&#x000A;  state: "CA",&#x000A;  zip: "12345",&#x000A;  country: "United States"&#x000A;  bill_type: "yearly",&#x000A;  card: "XXXX-XXXX-XXXX-1111",&#x000A;  card_exp: "2012/06/01 00:59:59 +0100",&#x000A;  card_type: "visa",&#x000A;  color: "#FFFFFF",&#x000A;  created_at: "2007/09/10 11:02:57 +0100",&#x000A;  email_text: "The first draft of your album is ready for your review and comment. To access this album please use the link and password below:&#x000A;  {masked_url}&#x000A;  Password: {password}&#x000A;&#x000A;  You can review the album multiple times. If you aren&#x27;t quite ready to send your comments just save them for later. When you submit your comments my team will be notified and we&#x27;ll make the changes that you&#x27;ve requested.&#x000A;&#x000A;  Let me know if you have any questions. Enjoy!",&#x000A;  language: "",&#x000A;  logo_file_name: null,&#x000A;  logo_position: "left",&#x000A;  masked_url: "yourelevation.com/albums",&#x000A;  newsletter: true,&#x000A;  next_bill_date: "3000/01/01",&#x000A;  paypal_email: "joe@example.com",&#x000A;  presentation_term: "pages",&#x000A;  status: "current",&#x000A;  time_zone: "Lisbon",&#x000A;  twitter_name: null,&#x000A;  url: null&#x000A;}&#x000A;</code></pre>
+            <pre><code>{&#x000A;  "first_name": "Joe",&#x000A;  "last_name": "User",&#x000A;  "login": "joeuser",&#x000A;  "email": "joe@example.com",&#x000A;  "second_email": "",&#x000A;  "third_email": "",&#x000A;  "company_name": "Joe User Photography",&#x000A;  "address": "123 AnyStreet",&#x000A;  "city": "AnyCity",&#x000A;  "state": "CA",&#x000A;  "zip": "12345",&#x000A;  "country": "United States"&#x000A;  "bill_type": "yearly",&#x000A;  "card": "XXXX-XXXX-XXXX-1111",&#x000A;  "card_exp": "2012/06/01 00:59:59 +0100",&#x000A;  ""card_type"": "visa",&#x000A;  "color": "#FFFFFF",&#x000A;  "created_at": "2007/09/10 11:02:57 +0100",&#x000A;  "email_text": "The first draft of your album is ready for your review and comment. To access this album please use the link and password below:&#x000A;  {masked_url}&#x000A;  Password: {password}&#x000A;&#x000A;  You can review the album multiple times. If you aren&#x27;t quite ready to send your comments just save them for later. When you submit your comments my team will be notified and we&#x27;ll make the changes that you&#x27;ve requested.&#x000A;&#x000A;  Let me know if you have any questions. Enjoy!",&#x000A;  "language": "",&#x000A;  "logo_file_name": null,&#x000A;  "logo_position": "left",&#x000A;  "masked_url": "yourelevation.com/albums",&#x000A;  "newsletter": true,&#x000A;  "next_bill_date": "3000/01/01",&#x000A;  "paypal_email": "joe@example.com",&#x000A;  "presentation_term": "pages",&#x000A;  "status": "current",&#x000A;  "time_zone": "Lisbon",&#x000A;  "twitter_name": null,&#x000A;  "url": null&#x000A;}&#x000A;</code></pre>
           </div>
         </div>
-        <h3>Create Account</h3>
+        <br>
+        <h3>Create an account</h3>
         <h4>POST /api/account</h4>
         <p>Create an AlbumExposure account. Required fields are:</p>
         <ul>
@@ -89,7 +92,7 @@
             <li><a href="#create-json">JSON request</a></li>
           </ul>
           <div id='create-json'>
-            <pre><code>{&#x000A;  first_name: "Joe",&#x000A;  last_name: "User",&#x000A;  company_name: "Joe User Photography",&#x000A;  email: "joe@example.com",&#x000A;  login: "joeuser",&#x000A;  password: "mypassword",&#x000A;  password_confirmation: "mypassword",&#x000A;  terms: "true",&#x000A;  newsletter: "true"&#x000A;}&#x000A;</code></pre>
+            <pre><code>{&#x000A;  "first_name": "Joe",&#x000A;  "last_name": "User",&#x000A;  "company_name": "Joe User Photography",&#x000A;  "email": "joe@example.com",&#x000A;  "login": "joeuser",&#x000A;  "password": "mypassword",&#x000A;  "password_confirmation": "mypassword",&#x000A;  "terms": "true",&#x000A;  "newsletter": "true"&#x000A;}&#x000A;</code></pre>
           </div>
         </div>
         <h5>Response</h5>
